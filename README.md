@@ -8,10 +8,9 @@ Autori
 ------
 
 Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+- xhofma11 Dominik Hofman
+- xmoskv01 Jana Veronika Moskvová
+- xzaker00 Erik Žák
 
 Licence
 -------
