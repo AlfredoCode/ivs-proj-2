@@ -1,0 +1,28 @@
+Stanovené termíny
+	25.2. - Tvorba a nastavení repozitáře
+	17.3. - TDD Testy matematické knihovny
+	      - Vytvoření matematické knihovny
+	25.3. - Tvorba UI + nápovědy
+	26.3. - Tvorba Makefile
+	      - Tvorba profileru
+	1.4.  - Nabindování matematických operací na UI
+	3.4.  - Otestování nabindovaných operací na UI
+	12.4. - Tvorba instalátoru / odinstalátoru
+	19.4. - Uživatelská a programová dokumentace
+	      - Tvorba Mockup UI
+	Po celou dobu tvorby projektu je prováděn debugging
+
+Přidělení úkolů na projektu jednotlivým řešitelům:
+	xhofma11 - Tvorba a nastavení repozitáře, Tvorba profileru, Tvorba instalátoru / odinstalátoru
+	xmoskv01 - Tvorba UI + nápovědy, Nabindování matematických operací na UI, Otestování nabindovaných operací na UI
+	xzaker00 - Uživatelská a programová dokumentace, Tvorba Mockup UI
+	xskypa03 - TDD Testy matematické knihovny, Vytvoření matematické knihovny, Tvorba Makefile, Nabindování matematických operací na UI, Otestování nabindovaných operací na UI
+
+Zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci
+	Discord - Komunikace
+	Asana - Plánování
+
+Zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže)
+	GIT - systém pro správu verzí
+	github.com - hosting
+	Do repozitáře byl přidán uživatelský účet 'ivskontrola' s patřičnými právy
