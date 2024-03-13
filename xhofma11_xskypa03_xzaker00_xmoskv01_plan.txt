@@ -18,11 +18,18 @@ Přidělení úkolů na projektu jednotlivým řešitelům:
 	xzaker00 - Uživatelská a programová dokumentace, Tvorba Mockup UI
 	xskypa03 - TDD Testy matematické knihovny, Vytvoření matematické knihovny, Tvorba Makefile, Nabindování matematických operací na UI, Otestování nabindovaných operací na UI
 
-Zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci
-	Discord - Komunikace
-	Asana - Plánování
+Zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci:
+	Discord - Běžná komunikace (Primární zdroj)
+	MS Teams - Záložní komunikace v případě výpadku Discordu (Sekundární zdroj)
+	Email - Pouze v případě požadavků či jiných písemností, které by neměly být ztraceny mezi běznou konverzací
+	Asana - Plánování práce, sledování progresu na projektu
+	Telefon - Pouze v případě problémů, které nelze vyřešit přes primární či sekundární zdroj kumunikace nebo přes Email
 
-Zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže)
+Pravidla pro psaní komentářů:
+	Kalkulačka bude vytvořena v jazyce C#. Všechny funkce v hlavičkových souborech budou popsány komentáři v anglickém jazyce. 
+	Dále budou popsány jakékoliv netriviální kusy kódu tak, aby je pochopil i člověk, který tyto kusy kódu neimplementoval.
+
+Zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící:
 	GIT - systém pro správu verzí
 	github.com - hosting
 	Do repozitáře byl přidán uživatelský účet 'ivskontrola' s patřičnými právy
