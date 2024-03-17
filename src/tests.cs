@@ -13,12 +13,12 @@ using NUnit.Framework;
 
 public class MathlibTests
 {
-    private Mathlib calculator;
+    private Mathlib mathlib;
 
     [SetUp]
     public void Setup()
     {
-        calculator = new Mathlib();
+        mathlib = new Mathlib();
     }
     /// <summary>
     /// Add test to check if add works correctly
@@ -32,8 +32,7 @@ public class MathlibTests
     {
         double num1 = 2;
         double num2 = 9;
-
-        double result = calculator.add(num1, num2);
+        double result = mathlib.add(num1, num2);
         Assert.AreEqual(11, result);
     }
     [Test]
@@ -41,8 +40,7 @@ public class MathlibTests
     {
         double num1 = 2;
         double num2 = -9;
-
-        double result = calculator.add(num1, num2);
+        double result = mathlib.add(num1, num2);
         Assert.AreEqual(-7, result);
     }
     [Test]
@@ -50,8 +48,7 @@ public class MathlibTests
     {
         double num1 = 2;
         double num2 = 0;
-
-        double result = calculator.add(num1, num2);
+        double result = mathlib.add(num1, num2);
         Assert.AreEqual(2, result);
     }
     [Test]
@@ -59,8 +56,7 @@ public class MathlibTests
     {
         double num1 = 0.1;
         double num2 = 0.7;
-        
-        double result = calculator.add(num1, num2);
+        double result = mathlib.add(num1, num2);
         Assert.AreEqual(0.8, result);
     }
     /// <summary>
@@ -76,8 +72,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 5;
-
-        double result = calculator.sub(num1, num2);
+        double result = mathlib.sub(num1, num2);
         Assert.AreEqual(4, result);
     }
     [Test]
@@ -85,8 +80,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 10;
-
-        double result = calculator.sub(num1, num2);
+        double result = mathlib.sub(num1, num2);
         Assert.AreEqual(-5, result);
     }
     [Test]
@@ -94,8 +88,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = -5;
-
-        double result = calculator.sub(num1, num2);
+        double result = mathlib.sub(num1, num2);
         Assert.AreEqual(14, result);
     }
     [Test]
@@ -103,8 +96,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 0;
-
-        double result = calculator.sub(num1, num2);
+        double result = mathlib.sub(num1, num2);
         Assert.AreEqual(9, result);
     }
     [Test]
@@ -112,8 +104,7 @@ public class MathlibTests
     {
         double num1 = 0.7;
         double num2 = 0.1;
-        
-        double result = calculator.sub(num1, num2);
+        double result = mathlib.sub(num1, num2);
         Assert.AreEqual(0.6, result);
     }
     /// <summary>
@@ -128,8 +119,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 5;
-
-        double result = calculator.mul(num1, num2);
+        double result = mathlib.mul(num1, num2);
         Assert.AreEqual(45, result);
     }
     [Test]
@@ -137,8 +127,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = -10;
-
-        double result = calculator.mul(num1, num2);
+        double result = mathlib.mul(num1, num2);
         Assert.AreEqual(-50, result);
     }
     [Test]
@@ -146,8 +135,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 0;
-
-        double result = calculator.mul(num1, num2);
+        double result = mathlib.mul(num1, num2);
         Assert.AreEqual(0, result);
     }
     [Test]
@@ -155,8 +143,7 @@ public class MathlibTests
     {
         double num1 = 0.7;
         double num2 = 0.1;
-        
-        double result = calculator.mul(num1, num2);
+        double result = mathlib.mul(num1, num2);
         Assert.AreEqual(0.07, result);
     }
     /// <summary>
@@ -171,8 +158,7 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 3;
-
-        double result = calculator.div(num1, num2);
+        double result = mathlib.div(num1, num2);
         Assert.AreEqual(3, result);
     }
     [Test]
@@ -180,8 +166,7 @@ public class MathlibTests
     {
         double num1 = 10;
         double num2 = -5;
-
-        double result = calculator.div(num1, num2);
+        double result = mathlib.div(num1, num2);
         Assert.AreEqual(-2, result);
     }
     [Test]
@@ -189,16 +174,14 @@ public class MathlibTests
     {
         double num1 = 9;
         double num2 = 0;
-
-        Assert.Throws<DivideByZeroException>(() => calculator.div(num1, num2), "Division by zero is not possible.");
+        Assert.Throws<DivideByZeroException>(() => mathlib.div(num1, num2), "Division by zero is not possible.");
     }
     [Test]
     public void div_bellow_one_test()
     {
         double num1 = 0.5;
         double num2 = 0.5;
-
-        double result = calculator.diviv(num1, num2);
+        double result = mathlib.diviv(num1, num2);
         Assert.AreEqual(0.25, result);
     }
     /// <summary>
@@ -212,31 +195,27 @@ public class MathlibTests
     public void faktorial_test()
     {
         double num1 = 5;
-
-        double result = calculator.Faktorial(a);
+        double result = mathlib.Faktorial(a);
         Assert.AreEqual(120, result);
     }
     [Test]
     public void faktorial_negative_test()
     {
         double num1 = -5;
-
-        Assert.Throws<NegativeFactorialException>(() => calculator.Faktorial(a), "Negative number is not allowed in faktorial.");
+        Assert.Throws<NegativeFactorialException>(() => mathlib.Faktorial(a), "Negative number is not allowed in faktorial.");
     }
     [Test]
     public void faktorial_zero_test()
     {
         double num1 = 0;
-
-        double result = calculator.Faktorial(a);
+        double result = mathlib.Faktorial(a);
         Assert.AreEqual(1, result);
     }
     [Test]
     public void faktorial_below_one_test()
     {
         double num1 = 0.2;
-
-        double result = calculator.Faktorial(a);
+        double result = mathlib.Faktorial(a);
         Assert.AreEqual(0,9181687423997606, result);
     }
     /// <summary>
@@ -253,8 +232,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 3;
-
-        double result = calculator.Power(num1, num2);
+        double result = mathlib.Power(num1, num2);
         Assert.AreEqual(125, result);
     }
     [Test]
@@ -262,8 +240,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 0;
-
-        double result = calculator.Power(num1, num2);
+        double result = mathlib.Power(num1, num2);
         Assert.AreEqual(1, result);
     }
     [Test]
@@ -271,8 +248,7 @@ public class MathlibTests
     {
         double num1 = -5;
         double num2 = 3;
-
-        double result = calculator.Power(num1, num2);
+        double result = mathlib.Power(num1, num2);
         Assert.AreEqual(-125, result);
     }
     [Test]
@@ -280,8 +256,7 @@ public class MathlibTests
     {
         double num1 = -5;
         double num2 = 2;
-
-        double result = calculator.Power(num1, num2);
+        double result = mathlib.Power(num1, num2);
         Assert.AreEqual(25, result);
     }
     [Test]
@@ -289,16 +264,14 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = -3;
-
-        Assert.Throws<PowerException>(() => calculator.Power(num1, num2), "Power hawe to be natural number.");
+        Assert.Throws<PowerException>(() => mathlib.Power(num1, num2), "Power hawe to be natural number.");
     }
     [Test]
     public void power_bellow_one_test()
     {
         double num1 = 4;
         double num2 = 0.5;
-
-        Assert.Throws<PowerException>(() => calculator.Power(num1, num2), "Power hawe to be natural number.");
+        Assert.Throws<PowerException>(() => mathlib.Power(num1, num2), "Power hawe to be natural number.");
     }
     /// <summary>
     /// Sqrt test to check if square root works correctly
@@ -313,8 +286,7 @@ public class MathlibTests
     {
         double num1 = 25;
         double num2 = 2;
-
-        double result = calculator.Sqrt(a);
+        double result = mathlib.Sqrt(a);
         Assert.AreEqual(5, result);
     }
     [Test]
@@ -322,32 +294,28 @@ public class MathlibTests
     {
         double num1 = 4;
         double num2 = 0.5;
-
-        Assert.Throws<SqrtException>(() => calculator.Sqrt(num1, num2), "Square root hawe to be natural number.");
+        Assert.Throws<SqrtException>(() => mathlib.Sqrt(num1, num2), "Square root hawe to be natural number.");
     }
     [Test]
     public void sqrt_negative_root_test()
     {
         double num1 = -5;
         double num2 = 5;
-
-        Assert.Throws<SqrtNegativeException>(() => calculator.Sqrt(num1, num2), "Negative numbers cant be square rooted.");
+        Assert.Throws<SqrtNegativeException>(() => mathlib.Sqrt(num1, num2), "Negative numbers cant be square rooted.");
     }
     [Test]
     public void sqrt_negative_number_test()
     {
         double num1 = 5;
         double num2 = -5;
-
-        Assert.Throws<SqrtException>(() => calculator.Sqrt(num1, num2), "Square root hawe to be natural number.");
+        Assert.Throws<SqrtException>(() => mathlib.Sqrt(num1, num2), "Square root hawe to be natural number.");
     }
     [Test]
     public void sqrt_zero_test()
     {
         double num1 = 5;
         double num2 = 0;
-
-        Assert.Throws<SqrtInfiniteException>(() => calculator.Sqrt(num1, num2), "Infinity.");
+        Assert.Throws<SqrtInfiniteException>(() => mathlib.Sqrt(num1, num2), "Infinity.");
     }
 
     /// <summary>
@@ -362,8 +330,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 3;
-
-        double result = calculator.Mod(num1, num2);
+        double result = mathlib.Mod(num1, num2);
         Assert.AreEqual(2, result);
     }
     [Test]
@@ -371,8 +338,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 0;
-
-        double result = calculator.Mod(num1, num2);
+        double result = mathlib.Mod(num1, num2);
         Assert.AreEqual(5, result); 
     }
     [Test]
@@ -380,8 +346,7 @@ public class MathlibTests
     {
         double num1 = 5;
         double num2 = 0.3;
-
-        double result = calculator.Mod(num1, num2);
+        double result = mathlib.Mod(num1, num2);
         Assert.AreEqual(0.2, result);
     }
     [Test]
@@ -389,8 +354,7 @@ public class MathlibTests
     {
         double num1 = 7;
         double num2 = -3;
-
-        double result = calculator.Mod(num1, num2);
+        double result = mathlib.Mod(num1, num2);
         Assert.AreEqual(-2, result);
     }
 }
