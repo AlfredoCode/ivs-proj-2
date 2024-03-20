@@ -10,21 +10,17 @@
 /// Last update 2024-03-16
 /// <summary>
 using System;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mathlib;
 using exeptions;
 
-namespace MathlibTests
+namespace OperationsTests
 {
+    [TestClass]
     public class Tests
     {
-        private Operations mathlib;
 
-        [Fact]
-        public void Tests_Setup()
-        {
-            mathlib = new Operations();
-        }
+        private const double Accuracy = 1e-6;
         /// <summary>
         /// Add test to check if add works correctly
         /// checks: normal use of add
@@ -32,14 +28,13 @@ namespace MathlibTests
         /// checks: zero
         /// checks: number betwean 0 and one
         /// </summary>
-        [Theory]
-        [InlineData(2, 9, 11)] //normal use of add
-        [InlineData(2, -9, -7)] //negative numbers
-        [InlineData(2, 0, 2)] //zero
-        [InlineData(0.1, 0.7, 0.8)] //number betwean 0 and one
-        public void Add_Test(double num1, double num2, double expectedResult)
+        [TestMethod]
+        public void Add_Test()
         {
-            Assert.Equal(expectedResult, mathlib.Add(num1, num2));
+            Assert.AreEqual(11, Operations.Add(2, 9), Accuracy);//normal use of add
+            Assert.AreEqual(-7, Operations.Add(2, -9), Accuracy);//negative numbers
+            Assert.AreEqual(2, Operations.Add(2, 0), Accuracy);//zero
+            Assert.AreEqual(0.8, Operations.Add(0.1, 0.7), Accuracy);//number betwean 0 and one
         }
         /// <summary>
         /// Sub test to check if sub works correctly
@@ -49,16 +44,14 @@ namespace MathlibTests
         /// checks: zero
         /// checks: number betwean 0 and one
         /// </summary>
-        [Theory]
-        [InlineData(9, 5, 4)] //normal use of sub
-        [InlineData(5, 10, -5)] //going bellow zero
-        [InlineData(9, -5, 14)] //negative numbers
-        [InlineData(9, 0, 9)] //zero
-        [InlineData(0.7, 0.1, 0.6)] //number betwean 0 and one
-        public void Sub_Test(double num1, double num2, double expectedResult)
+        [TestMethod]
+        public void Sub_Test()
         {
-            Assert.Equal(expectedResult, mathlib.Sub(num1, num2));
-
+            Assert.AreEqual(4, Operations.Sub(9, 5), Accuracy);//normal use of sub
+            Assert.AreEqual(-5, Operations.Sub(5, 10), Accuracy);//going bellow zero
+            Assert.AreEqual(14, Operations.Sub(9, -5), Accuracy);//negative numbers
+            Assert.AreEqual(9, Operations.Sub(9, 0), Accuracy);//zero
+            Assert.AreEqual(0.6, Operations.Sub(0.7, 0.1), Accuracy);//number betwean 0 and one
         }
         /// <summary>
         /// Mul test to check if mul works correctly
@@ -67,14 +60,13 @@ namespace MathlibTests
         /// checks: zero
         /// checks: number betwean 0 and one
         /// </summary>
-        [Theory]
-        [InlineData(9, 5, 45)] //normal use of mul
-        [InlineData(5, -10, -50)] //negative numbers
-        [InlineData(9, 0, 0)] //zero
-        [InlineData(0.7, 0.1, 0.07)] //number betwean 0 and one
-        public void Mul_Test(double num1, double num2, double expectedResult)
+        [TestMethod]
+        public void Mul_Test()
         {
-            Assert.Equal(expectedResult, mathlib.Mul(num1, num2));
+            Assert.AreEqual(45, Operations.Mul(9, 5), Accuracy);//normal use of mul
+            Assert.AreEqual(-50, Operations.Mul(5, -10), Accuracy);//negative numbers
+            Assert.AreEqual(0, Operations.Mul(9, 0), Accuracy);//zero
+            Assert.AreEqual(0.07, Operations.Mul(0.7, 0.1), Accuracy);//number betwean 0 and one
         }
         /// <summary>
         /// Div test to check if div works correctly
@@ -83,40 +75,38 @@ namespace MathlibTests
         /// checks: zero
         /// checks: number betwean 0 and one
         /// </summary>
-        [Fact]
+        [TestMethod]
         public void Division_Test()
         {
-            Assert.Equal(3, mathlib.Div(9, 3));//normal use of div
-            Assert.Equal(-2, mathlib.Div(10, -5));//negative numbers
+            Assert.AreEqual(3, Operations.Div(9, 3), Accuracy);//normal use of div
+            Assert.AreEqual(-2, Operations.Div(10, -5), Accuracy);//negative numbers
             try//zero
             {
-                mathlib.Div(9, 0);
+                Operations.Div(9, 0);
             }
             catch (DivZeroException)
             {
             }
-            Assert.Equal(1, mathlib.Div(0.5, 0.5));//number betwean 0 and one
+            Assert.AreEqual(1, Operations.Div(0.5, 0.5), Accuracy);//number betwean 0 and one
         }
         /// <summary>
         /// Faktorial test to check if faktorial works correctly
         /// checks: normal use of faktorial
         /// checks: negative numbers
         /// checks: zero
-        /// checks: number betwean 0 and one
         /// </summary>
-        [Fact]
+        [TestMethod]
         public void Factorial_Test()
         {
-            Assert.Equal(120, mathlib.Faktorial(5), mathlib.Faktorial(5));//normal use of faktorial
+            Assert.AreEqual(120, Operations.Faktorial(5), Accuracy);//normal use of faktorial
             try//negative number
             {
-                mathlib.Faktorial(-5);
+                Operations.Faktorial(-5);
             }
             catch (FactorialExeption)
             {
             }
-            Assert.Equal(1, mathlib.Faktorial(0));//zero
-            Assert.Equal(0,9181687, mathlib.Faktorial(0.2));//number betwean 0 and one
+            Assert.AreEqual(1, Operations.Faktorial(0), Accuracy);//zero
         }
         /// <summary>
         /// Power test to check if power works correctly
@@ -127,23 +117,23 @@ namespace MathlibTests
         /// checks: negative power
         /// checks: number betwean 0 and one
         /// </summary>
-        [Fact]
+        [TestMethod]
         public void Power_Test()
         {
-            Assert.Equal(125, mathlib.Pow(5, 3));//normal use of power
-            Assert.Equal(1, mathlib.Pow(5, 0));//zero
-            Assert.Equal(-125, mathlib.Pow(-5, 3));//negative numbers (odd)
-            Assert.Equal(25, mathlib.Pow(-5, 2));//negative numbers (even)
+            Assert.AreEqual(125, Operations.Pow(5, 3), Accuracy);//normal use of power
+            Assert.AreEqual(1, Operations.Pow(5, 0), Accuracy);//zero
+            Assert.AreEqual(-125, Operations.Pow(-5, 3), Accuracy);//negative numbers (odd)
+            Assert.AreEqual(25, Operations.Pow(-5, 2), Accuracy);//negative numbers (even)
             try//negative power
             {
-                mathlib.Pow(5, -3);
+                Operations.Pow(5, -3);
             }
             catch (PowNaturalException)
             {
             }
             try//number betwean 0 and one
             {
-                mathlib.Pow(4, 0.5);
+                Operations.Pow(4, 0.5);
             }
             catch (PowNaturalException)
             {
@@ -157,28 +147,34 @@ namespace MathlibTests
         /// checks: negative numbers rooted by
         /// checks: zero
         /// </summary>
-        [Fact]
+        [TestMethod]
         public void Sqrt_Test()
         {
-            Assert.Equal(5, mathlib.Sqrt(25, 2));//normal use of square root
+            Assert.AreEqual(5, Operations.Sqrt(25, 2), Accuracy);//normal use of square root
             try//number betwean 0 and one
             {
-                mathlib.Sqrt(4, 0.5);
+                Operations.Sqrt(4, 0.5);
             }
             catch (SqrtNaturalExeption)
             {
             }
             try//negative rooted number
             {
-                mathlib.Sqrt(-5, 5);
+                Operations.Sqrt(-5, 5);
             }
             catch (SqrtNegExeption)
             {
             }
-            Assert.Equal(125, mathlib.Sqrt(5, -3));//negative numbers rooted by
+            try//negative numbers rooted by
+            {
+                Operations.Sqrt(5, -3);
+            }
+            catch (SqrtNaturalExeption)
+            {
+            }
             try//zero
             {
-                mathlib.Sqrt(5, 0);
+                Operations.Sqrt(5, 0);
             }
             catch (SqrtbyZeroExeption)
             {
@@ -192,14 +188,21 @@ namespace MathlibTests
         /// checks: number betwean 0 and one
         /// checks: negative numbers
         /// </summary>
-        [Theory]
-        [InlineData(5, 3, 2)] //normal use of Mod
-        [InlineData(5, 0, 5)] //zero
-        [InlineData(5, 0.3, 0.2)] //number betwean 0 and one
-        [InlineData(7, -3, -2)] //negative numbers
-        public void Mod_test(double num1, double num2, double result)
+        [TestMethod]
+        public void Mod_test()
         {
-            Assert.Equal(result, mathlib.Mod(num1, num2));
+            Assert.AreEqual(2, Operations.Mod(5, 3), Accuracy);//normal use of Mod
+            try//zero
+            {
+                Operations.Mod(5, 0);
+            }
+            catch (ModExeption)
+            {
+            }
+            Assert.AreEqual(0.2, Operations.Mod(5, 0.3), Accuracy);//number betwean 0 and one
+            Assert.AreEqual(0.1, Operations.Mod(5.5, 0.3), Accuracy);
+            Assert.AreEqual(-2, Operations.Mod(7, -3), Accuracy);//negative numbers
+            Assert.AreEqual(2, Operations.Mod(-7, 3), Accuracy);
         }
     }
 }

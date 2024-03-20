@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("testlib")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Mathlib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c09f9b341931840b51da2c490ff72cfc05a9987")]
-[assembly: System.Reflection.AssemblyProductAttribute("testlib")]
-[assembly: System.Reflection.AssemblyTitleAttribute("testlib")]
+[assembly: System.Reflection.AssemblyProductAttribute("Mathlib")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Mathlib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Vygenerované třídou WriteCodeFragment nástroje MSBuild
