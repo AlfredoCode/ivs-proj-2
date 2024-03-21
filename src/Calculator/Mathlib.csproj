@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Calculator\Exeptions.cs" />
+  </ItemGroup>
+
 </Project>

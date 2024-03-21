@@ -1,13 +1,10 @@
 /// <summary>
 /// tests.cs
 /// 
-/// Dominik Hofman (xhofma11)
-/// Jana Veronika Moskvová (xmoskv01)
 /// Tomas Skypala (xskypa03)
-/// Erik Žák (xzaker00)
 ///
 /// Implementation of tests for Mathlib.version 0.1
-/// Last update 2024-03-16
+/// Last update 2024-03-21
 /// <summary>
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
