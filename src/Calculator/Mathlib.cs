@@ -55,6 +55,7 @@ namespace Mathlib
         /// <summary>
         public static double Mod(double num1, double num2)
         {
+            if (num2 == 0.0)
             {
                 throw new ModExeption("Modulo by zero is not possible.");
             }

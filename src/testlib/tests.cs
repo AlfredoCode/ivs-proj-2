@@ -193,7 +193,7 @@ namespace OperationsTests
             {
                 Operations.Mod(5, 0);
             }
-            catch (ModExeption)
+                catch (ModExeption)
             {
             }
             Assert.AreEqual(0.2, Operations.Mod(5, 0.3), Accuracy);//number betwean 0 and one
