@@ -5,6 +5,8 @@
 *.obj
 *.vs
 *.sln
+*.txt
+*_ref
 src/Calculator/bin
 src/Calculator/obj
 src/profiler/bin
