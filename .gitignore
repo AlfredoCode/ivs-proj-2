@@ -27,3 +27,12 @@
 *.exe
 *.out
 *.app
+
+*.vs
+*.sln
+./src/Calculator/bin
+src/Calculator/obj
+src/profiler/bin
+src/profiler/obj
+src/testlib/bin
+src/testlib/obj
