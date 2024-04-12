@@ -78,4 +78,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Calculator\Mathlib.csproj" />
+    </ItemGroup>
+
 </Project>
