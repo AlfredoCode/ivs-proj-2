@@ -157,12 +157,23 @@ namespace Mathlib
             string postfixExpression = "";
 
             // Procházení infixového výrazu
+            bool beforeLetter = false;
             foreach (char c in infixExpression)
             {
                 // Operandy
                 if (char.IsLetterOrDigit(c))
                 {
-                    postfixExpression += c;
+                    if (!beforeLetter)
+                    {
+                        postfixExpression += " " + c + " ";
+
+                    }
+                    else
+                    {
+                        postfixExpression += c;
+
+                    }
+                    beforeLetter = true;
                 }
                 // Operátory a závorky
                 else
@@ -208,6 +219,7 @@ namespace Mathlib
                             operatorStack.Push(c.ToString());
                             break;
                     }
+                    beforeLetter = false;
                 }
             }
 
@@ -221,6 +233,7 @@ namespace Mathlib
 
             foreach (string token in postfixExpression.Split(' '))
             {
+                System.Diagnostics.Debug.WriteLine(postfixExpression);
                 if (double.TryParse(token, out double value))
                 {
                     operandStack.Push(value);
