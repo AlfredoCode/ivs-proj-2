@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using Calculator.Mathlib;
+using Mathlib;
 using System;
 using System.Text.RegularExpressions;
 
@@ -24,7 +24,7 @@ namespace calculadora
         {   
             result.Text += "√";
         }
-        void OnNumberSelection(object sender, EventArgs e)
+        void OnNumberSelection0(object sender, EventArgs e)
         {
             result.Text += "0";
         }
@@ -103,7 +103,7 @@ namespace calculadora
         }
         void OnEquals(object sender, EventArgs e)
         {
-            result.Text == "" + Mathlib.calculate(result.Text);
+            result.Text = "" + Mathlib.Operations.calculate(result.Text);
         }
     }
 }
