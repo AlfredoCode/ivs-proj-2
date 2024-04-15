@@ -2,11 +2,72 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="calculadora.Napoveda"
-             Title="Napoveda">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Nápověda">
+    <ScrollView>
+        <VerticalStackLayout Margin="20">
+            <Label FontAttributes="Bold"
+                Text="Pí (π = 3,141592653589)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Matematická konstanta, která udává poměr obvodu jakéhokoli kruhu v eukleidovské rovině k jeho průměru. &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Náhodná veličina (RAND)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Vygeneruje náhodné číslo v rozmezí 0 a 100. &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Sčítání (+)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Spočívá v kombinování dvou nebo více čísel do jednoho součtu. &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Odčítání (-)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Spočívá v nalezení rozdílu mezi dvěma čísly. &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Násobení (x)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Spočívá v opakovaném sčítání stejného čísla. &#10;"
+        />
+            <Label FontAttributes="Bold"
+                Text="Děleno (÷)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Matematická operace, která vyjadřuje opakované násobení. &#10; 1. zadané číslo = dělenec &#10; 2. zadané číslo = dělitel &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Mocnina s přirozeným mocnitelem (𝑥ʸ)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Matematická operace, která vyjadřuje opakované násobení. &#10; 1. zadané číslo = základ mocniny (mocněnec) &#10; 2. zadané číslo = exponent (mocnitel) &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Obecná odmocnina (√)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Umožňuje najít číslo, které je umocněno na danou hodnotu. &#10; 1. zadané číslo = odmocnitel &#10; 2. zadané číslo = odmocněnec &#10;"
+            />
+            <Label FontAttributes="Bold"
+                Text="Faktoriál (!)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="Používá ke spočítání součinu všech celých čísel od 1 do daného čísla &#10;"
+            />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
