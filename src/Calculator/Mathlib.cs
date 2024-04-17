@@ -3,6 +3,8 @@ using exeptions;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Text.RegularExpressions;
+using System.Security.Principal;
+using System.DirectoryServices;
 
 namespace Mathlib
 {
@@ -66,9 +68,13 @@ namespace Mathlib
             {
                 throw new PowNaturalException("Power have to be natural number.");
             }
-            else if (num1 == 0 || num2 == 0)
+            else if (num2 == 0)
             {
                 return 1;
+            }
+            else if (num1 == 0)
+            {
+                return 0;
             }
             else
             {
@@ -134,6 +140,10 @@ namespace Mathlib
         }
         public static string ridoff0(string s)
         {
+            if (s == "00")
+            {
+                return "0";
+            }
             if (s.Length == 2 && s[0] == '0')
             {
                 s = s.TrimStart('0');
@@ -168,26 +178,39 @@ namespace Mathlib
 
         public static string calculate(string infixExpression)
         {
+            bool combine = false;
+            bool newly_pushed_op = false;
             // Zásobník pro operátory
             Stack<string> operatorStack = new Stack<string>();
 
             // Výstupní postfixový řetězec
             string postfixExpression = "";
-            var tokens = Regex.Matches(infixExpression, @"(?:\d+\.\d+)|(?:\d+)|(?:\d+\,\d+)|[()+\-*\/^√%!]|π|R");
+            var tokens = Regex.Matches(infixExpression, @"(?:\d+\.\d+)|(?:\d+\,\d+)|(?:\d+)|[+\-*\/^√%!]|π|R");
 
             // Procházení infixového výrazu
             foreach (Match match in tokens)
             {
                 string token = match.Value;
-
-                // Operandy
-                if (char.IsLetterOrDigit(token[0]) || token == "π" || token == "R")
+                if (combine)
+                {
+                    postfixExpression += "-" + token + " ";
+                    combine = false;
+                }
+                else if (token == "-" && (newly_pushed_op == true || string.IsNullOrEmpty(postfixExpression)))
+                {
+                    combine = true;
+                    System.Diagnostics.Debug.WriteLine(1);
+                }
+                else if(char.IsLetterOrDigit(token[0]) || token == "π" || token == "R")
                 {
                     postfixExpression += token + " ";
+                    System.Diagnostics.Debug.WriteLine(postfixExpression);
+                    newly_pushed_op = false;
                 }
                 // Operátory a závorky
                 else
                 {
+                    System.Diagnostics.Debug.WriteLine(postfixExpression);
                     switch (token[0])
                     {
                         case '+':
@@ -198,6 +221,7 @@ namespace Mathlib
                                 postfixExpression += operatorStack.Pop() + " ";
                             }
                             operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                         case '*':
                         case '/':
@@ -208,6 +232,7 @@ namespace Mathlib
                                 postfixExpression += operatorStack.Pop() + " ";
                             }
                             operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                         case '^':
                         case '√':
@@ -218,6 +243,7 @@ namespace Mathlib
                                 postfixExpression += operatorStack.Pop() + " ";
                             }
                             operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                     }
                 }

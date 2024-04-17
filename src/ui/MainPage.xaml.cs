@@ -85,6 +85,7 @@ namespace calculadora
         void OnSub(object sender, EventArgs e)
         {
             result.Text += "-";
+            result.Text = Mathlib.Operations.ridoff0(result.Text);
         }
         void OnAdd(object sender, EventArgs e)
         {
