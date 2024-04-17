@@ -56,13 +56,12 @@ namespace Profiler
             foreach (double num in numbers)
             {
                 sum = Operations.Add(sum, num);                   // Sum ((x_i))
-                sumQuares = Operations.Add(sumQuares, Operations.Pow(num, 2)); // Sum( (x_i)^2 )
+                sumQuares = Operations.Add(sumQuares, Operations.Pow(2, num)); // Sum( (x_i)^2 )
                 
             }
-
-            double avg = Operations.Div(sum, count);
+            double avg = Operations.Div(count, sum);
             double avgSquared = Operations.Mul(avg, avg);   // (x')^2
-            double variance = Operations.Div(Operations.Sub(sumQuares, Operations.Mul(count, avgSquared)), Operations.Sub(count, 1)); // (Sum(x_i)^2) - (N * (x')^2) / (N - 1)
+            double variance = Operations.Div(Operations.Sub(1, count), Operations.Sub(Operations.Mul(count, avgSquared), sumQuares)); // (Sum(x_i)^2) - (N * (x')^2) / (N - 1)
             double s = Operations.Sqrt(variance, 2);    // sqrt((Sum(x_i)^2) - (N * (x')^2) / (N - 1))
 
             Console.WriteLine(s);
