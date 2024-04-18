@@ -44,11 +44,11 @@ namespace OperationsTests
         [TestMethod]
         public void Sub_Test()
         {
-            Assert.AreEqual(4, Operations.Sub(9, 5), Accuracy);//normal use of sub
-            Assert.AreEqual(-5, Operations.Sub(5, 10), Accuracy);//going bellow zero
-            Assert.AreEqual(14, Operations.Sub(9, -5), Accuracy);//negative numbers
-            Assert.AreEqual(9, Operations.Sub(9, 0), Accuracy);//zero
-            Assert.AreEqual(0.6, Operations.Sub(0.7, 0.1), Accuracy);//number betwean 0 and one
+            Assert.AreEqual(4, Operations.Sub(5, 9), Accuracy);//normal use of sub
+            Assert.AreEqual(-5, Operations.Sub(10, 5), Accuracy);//going bellow zero
+            Assert.AreEqual(14, Operations.Sub(-5, 9), Accuracy);//negative numbers
+            Assert.AreEqual(9, Operations.Sub(0, 9), Accuracy);//zero
+            Assert.AreEqual(0.6, Operations.Sub(0.1, 0.7), Accuracy);//number betwean 0 and one
         }
         /// <summary>
         /// Mul test to check if mul works correctly
@@ -75,11 +75,11 @@ namespace OperationsTests
         [TestMethod]
         public void Division_Test()
         {
-            Assert.AreEqual(3, Operations.Div(9, 3), Accuracy);//normal use of div
-            Assert.AreEqual(-2, Operations.Div(10, -5), Accuracy);//negative numbers
+            Assert.AreEqual(3, Operations.Div(3, 9), Accuracy);//normal use of div
+            Assert.AreEqual(-2, Operations.Div(-5, 10), Accuracy);//negative numbers
             try//zero
             {
-                Operations.Div(9, 0);
+                Operations.Div(0, 9);
             }
             catch (DivZeroException)
             {
@@ -117,20 +117,20 @@ namespace OperationsTests
         [TestMethod]
         public void Power_Test()
         {
-            Assert.AreEqual(125, Operations.Pow(5, 3), Accuracy);//normal use of power
-            Assert.AreEqual(1, Operations.Pow(5, 0), Accuracy);//zero
-            Assert.AreEqual(-125, Operations.Pow(-5, 3), Accuracy);//negative numbers (odd)
-            Assert.AreEqual(25, Operations.Pow(-5, 2), Accuracy);//negative numbers (even)
+            Assert.AreEqual(125, Operations.Pow(3, 5), Accuracy);//normal use of power
+            Assert.AreEqual(1, Operations.Pow(0, 5), Accuracy);//zero
+            Assert.AreEqual(-125, Operations.Pow(3, -5), Accuracy);//negative numbers (odd)
+            Assert.AreEqual(25, Operations.Pow(2, -5), Accuracy);//negative numbers (even)
             try//negative power
             {
-                Operations.Pow(5, -3);
+                Operations.Pow(-3, 5);
             }
             catch (PowNaturalException)
             {
             }
             try//number betwean 0 and one
             {
-                Operations.Pow(4, 0.5);
+                Operations.Pow(0.5, 4);
             }
             catch (PowNaturalException)
             {
@@ -188,18 +188,18 @@ namespace OperationsTests
         [TestMethod]
         public void Mod_test()
         {
-            Assert.AreEqual(2, Operations.Mod(5, 3), Accuracy);//normal use of Mod
+            Assert.AreEqual(2, Operations.Mod(3, 5), Accuracy);//normal use of Mod
             try//zero
             {
-                Operations.Mod(5, 0);
+                Operations.Mod(0, 5);
             }
                 catch (ModExeption)
             {
             }
-            Assert.AreEqual(0.2, Operations.Mod(5, 0.3), Accuracy);//number betwean 0 and one
-            Assert.AreEqual(0.1, Operations.Mod(5.5, 0.3), Accuracy);
-            Assert.AreEqual(-2, Operations.Mod(7, -3), Accuracy);//negative numbers
-            Assert.AreEqual(2, Operations.Mod(-7, 3), Accuracy);
+            Assert.AreEqual(0.2, Operations.Mod(0.3, 5), Accuracy);//number betwean 0 and one
+            Assert.AreEqual(0.1, Operations.Mod(0.3, 5.5), Accuracy);
+            Assert.AreEqual(-2, Operations.Mod(-3, 7), Accuracy);//negative numbers
+            Assert.AreEqual(2, Operations.Mod(3, -7), Accuracy);
         }
     }
 }

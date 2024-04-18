@@ -1,15 +1,10 @@
-﻿/// <summary>
-/// Mathlib.cs
-/// 
-/// Tomas Skypala (xskypa03)
-///
-/// Implementation of Mathlib.version 0.1
-/// Last update 2024-03-21
-/// <summary>
-
-using System;
+﻿using System;
 using exeptions;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Text.RegularExpressions;
+using System.Security.Principal;
+using System.DirectoryServices;
 
 namespace Mathlib
 {
@@ -27,7 +22,7 @@ namespace Mathlib
         /// <summary>
         public static double Sub(double num1, double num2)
         {
-            return num1 - num2;
+            return num2 - num1;
         }
         /// <summary>
         /// Function to mul
@@ -42,11 +37,11 @@ namespace Mathlib
         /// <summary>
         public static double Div(double num1, double num2)
         {
-            if (num2 == 0.0)
+            if (num1 == 0.0)
             {
                 throw new DivZeroException("Division by zero is not possible.");
             }
-            return num1 / num2;
+            return num2 / num1;
         }
 
 
@@ -54,7 +49,7 @@ namespace Mathlib
         /// Function to modulo
         /// throws exeption if we do modulo by 0
         /// <summary>
-        public static double Mod(double num1, double num2)
+        public static double Mod(double num2, double num1)
         {
             if (num2 == 0.0)
             {
@@ -67,15 +62,21 @@ namespace Mathlib
         /// throws exeption if we do power by non Natural number
         /// if we power by zero or power zero it throws 1
         /// <summary>
-        public static double Pow(double num1, double num2)
+        public static double Pow(double num2, double num1)
         {
             if (num2 < 0 || num2 % 1 != 0)
             {
-                throw new PowNaturalException( "Power have to be natural number.");
-            }else if (num1 == 0 || num2 == 0)
+                throw new PowNaturalException("Power have to be natural number.");
+            }
+            else if (num2 == 0)
             {
                 return 1;
-            }else
+            }
+            else if (num1 == 0)
+            {
+                return 0;
+            }
+            else
             {
                 double j = num1;
                 for (int i = 0; i < num2 - 1; i++)
@@ -96,14 +97,24 @@ namespace Mathlib
             if (num2 < 0 || num2 % 1 != 0)
             {
                 throw new SqrtNaturalExeption("Square root have to be natural number.");
-            } else if (num1 < 0)
+            }
+            else if (num1 < 0)
             {
                 throw new SqrtNegExeption("Negative numbers cant be square rooted.");
-            } else if (num2 == 0)
+            }
+            else if (num2 == 0)
             {
                 throw new SqrtbyZeroExeption("Infinity.");
             }
-            return System.Math.Pow(num1, 1.0 / num2);
+            double x0 = num1 / 2; // Počáteční odhad
+            double x1 = (1 / num2) * ((num2 - 1) * x0 + (num1 / Math.Pow(x0, num2 - 1))); // Newtonova iterace
+
+            while (Math.Abs(x1 - x0) >= 0.0001)
+            {
+                x0 = x1;
+                x1 = (1 / num2) * ((num2 - 1) * x0 + (num1 / Math.Pow(x0, num2 - 1))); // Newtonova iterace
+            }
+            return x1;
         }
         /// <summary>
         /// Function to faktorial
@@ -127,10 +138,27 @@ namespace Mathlib
                 return j;
             }
         }
+        public static string ridoff0(string s)
+        {
+            if (s == "00")
+            {
+                return "0";
+            }
+            if (s.Length == 2 && s[0] == '0')
+            {
+                s = s.TrimStart('0');
+                return s;
+            }
+            else
+            {
+                return s;
+            }
+
+        }
 
         private static int Precedence(string op)
         {
-            switch(op)
+            switch (op)
             {
                 case "+":
                 case "-":
@@ -150,62 +178,72 @@ namespace Mathlib
 
         public static string calculate(string infixExpression)
         {
+            bool combine = false;
+            bool newly_pushed_op = false;
             // Zásobník pro operátory
             Stack<string> operatorStack = new Stack<string>();
 
             // Výstupní postfixový řetězec
             string postfixExpression = "";
+            var tokens = Regex.Matches(infixExpression, @"(?:\d+\.\d+)|(?:\d+\,\d+)|(?:\d+)|[+\-*\/^√%!]|π|R");
 
             // Procházení infixového výrazu
-            foreach (char c in infixExpression)
+            foreach (Match match in tokens)
             {
-                // Operandy
-                if (char.IsLetterOrDigit(c))
+                string token = match.Value;
+                if (combine)
                 {
-                    postfixExpression += c;
+                    postfixExpression += "-" + token + " ";
+                    combine = false;
+                }
+                else if (token == "-" && (newly_pushed_op == true || string.IsNullOrEmpty(postfixExpression)))
+                {
+                    combine = true;
+                    System.Diagnostics.Debug.WriteLine(1);
+                }
+                else if(char.IsLetterOrDigit(token[0]) || token == "π" || token == "R")
+                {
+                    postfixExpression += token + " ";
+                    System.Diagnostics.Debug.WriteLine(postfixExpression);
+                    newly_pushed_op = false;
                 }
                 // Operátory a závorky
                 else
                 {
-                    switch (c)
+                    System.Diagnostics.Debug.WriteLine(postfixExpression);
+                    switch (token[0])
                     {
                         case '+':
                         case '-':
                             // Vyprázdnění zásobníku s operátory s nižší prioritou
-                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) >= Precedence(c.ToString()))
+                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) >= Precedence(token))
                             {
-                                postfixExpression += operatorStack.Pop();
+                                postfixExpression += operatorStack.Pop() + " ";
                             }
-                            operatorStack.Push(c.ToString());
+                            operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                         case '*':
                         case '/':
                         case '%':
                             // Vyprázdnění zásobníku s operátory s prioritou menší nebo rovnou
-                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) >= Precedence(c.ToString()))
+                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) >= Precedence(token))
                             {
-                                postfixExpression += operatorStack.Pop();
+                                postfixExpression += operatorStack.Pop() + " ";
                             }
-                            operatorStack.Push(c.ToString());
+                            operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                         case '^':
-                            // Vyprázdnění zásobníku s operátory s prioritou menší
-                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) > Precedence(c.ToString()))
-                            {
-                                postfixExpression += operatorStack.Pop();
-                            }
-                            operatorStack.Push(c.ToString());
-                            break;
                         case '√':
-                            // Vyprázdnění zásobníku s operátory s prioritou menší
-                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) > Precedence(c.ToString()))
-                            {
-                                postfixExpression += operatorStack.Pop();
-                            }
-                            operatorStack.Push(c.ToString());
-                            break;
                         case '!':
-                            operatorStack.Push(c.ToString());
+                            // Vyprázdnění zásobníku s operátory s prioritou menší
+                            while (operatorStack.Count > 0 && Precedence(operatorStack.Peek()) > Precedence(token))
+                            {
+                                postfixExpression += operatorStack.Pop() + " ";
+                            }
+                            operatorStack.Push(token);
+                            newly_pushed_op = true;
                             break;
                     }
                 }
@@ -214,54 +252,65 @@ namespace Mathlib
             // Vyprázdnění zásobníku zbylých operátorů
             while (operatorStack.Count > 0)
             {
-                postfixExpression += operatorStack.Pop();
+                postfixExpression += operatorStack.Pop() + " ";
             }
 
             Stack<double> operandStack = new Stack<double>();
-
+            System.Diagnostics.Debug.WriteLine(postfixExpression);
             foreach (string token in postfixExpression.Split(' '))
             {
-                if (double.TryParse(token, out double value))
+                if (!string.IsNullOrEmpty(token))  // Add this line to check if token is not empty
                 {
-                    operandStack.Push(value);
-                }
-                else
-                {
-                    char op = token[0];
-                    double operand2 = operandStack.Pop();
-
-                    switch (op)
+                    if (double.TryParse(token, out double value))
                     {
-                        case '+':
-                            operandStack.Push(Add(operandStack.Pop(), operand2));
-                            break;
-                        case '-':
-                            operandStack.Push(Sub(operandStack.Pop(), operand2));
-                            break;
-                        case '*':
-                            operandStack.Push(Mul(operandStack.Pop(), operand2));
-                            break;
-                        case '/':
-                            operandStack.Push(Div(operandStack.Pop(), operand2));
-                            break;
-                        case '%':
-                            operandStack.Push(Mod(operandStack.Pop(), operand2));
-                            break;
-                        case '^':
-                            operandStack.Push(Pow(operandStack.Pop(), operand2));
-                            break;
-                        case '√':
-                            operandStack.Push(Sqrt(operandStack.Pop(), operand2));
-                            break;
-                        case '!':
-                            operandStack.Push(Faktorial(operandStack.Pop()));
-                            break;
-                        default:
-                            throw new InvalidOperationException("Neznámý operátor: " + op);
+                        operandStack.Push(value);
+                    }
+                    else
+                    {
+                        char op = token[0];
+
+                        switch (op)
+                        {
+                            case '+':
+                                operandStack.Push(Add(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '-':
+                                operandStack.Push(Sub(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '*':
+                                operandStack.Push(Mul(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '/':
+                                operandStack.Push(Div(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '%':
+                                operandStack.Push(Mod(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '^':
+                                operandStack.Push(Pow(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '√':
+                                operandStack.Push(Sqrt(operandStack.Pop(), operandStack.Pop()));
+                                break;
+                            case '!':
+                                operandStack.Push(Faktorial(operandStack.Pop()));
+                                break;
+                            case 'π':
+                                operandStack.Push(3.14159265359);
+                                break;
+                            case 'R':
+                                Random random = new Random();
+                                operandStack.Push(random.Next(101));
+                                break;
+                            default:
+                                throw new InvalidOperationException("Neznámý operátor: " + op);
+                        }
                     }
                 }
             }
-
+            foreach (var operand in operandStack) {
+                System.Diagnostics.Debug.WriteLine(operand);
+            }
             if (operandStack.Count != 1)
             {
                 throw new InvalidOperationException("Neplatný výraz");
