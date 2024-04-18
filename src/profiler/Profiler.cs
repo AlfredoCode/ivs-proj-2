@@ -3,8 +3,8 @@
 /// 
 /// Dominik Hofman (xhofma11)
 ///
-/// Implementation of Profiler.version 0.1
-/// Last update 2024-03-28
+/// Implementation of Profiler.version 0.2
+/// Last update 2024-04-18
 /// <summary>
 using System;
 using System.Collections.Generic;
@@ -42,6 +42,10 @@ namespace Profiler
 
             return numbersOnly;
         }
+        /// <summary>
+        /// Calculates the standard deviation of a list of numbers.
+        /// </summary>
+        /// <param name="numbers">The list of numbers.</param>
         public static void CalculateDeviation(List<double> numbers)
         {
             if(numbers.Count <= 1)
