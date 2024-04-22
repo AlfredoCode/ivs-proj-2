@@ -88,12 +88,11 @@ namespace Profiler
         /// Calculates the standard deviation of a list of numbers.
         /// </summary>
         /// <param name="numbers">The list of numbers.</param>
-        public static void CalculateDeviation(List<double> numbers)
+        public static double CalculateDeviation(List<double> numbers)
         {
             if(numbers.Count <= 1)
             {
-                Console.WriteLine("0");
-                return;
+                return 0;
             }
             int count = numbers.Count;
             double sum = 0.0;
@@ -110,12 +109,13 @@ namespace Profiler
             double variance = Operations.Div(Operations.Sub(1, count), Operations.Sub(Operations.Mul(count, avgSquared), sumQuares)); // (Sum(x_i)^2) - (N * (x')^2) / (N - 1)
             double s = Operations.Sqrt(variance, 2);    // sqrt((Sum(x_i)^2) - (N * (x')^2) / (N - 1))
 
-            Console.WriteLine(s);
+            return s;
         }
         static void Main(string[] args)
         {
             List<double> numbersOnly = StdinParser();
-            CalculateDeviation(numbersOnly);
+            double deviation = CalculateDeviation(numbersOnly);
+            Console.WriteLine(deviation);
             return;
 
         }
