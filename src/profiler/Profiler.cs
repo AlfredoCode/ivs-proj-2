@@ -22,57 +22,16 @@ namespace Profiler
         /// <returns>A list of doubles parsed from the console input.</returns>
         public static List<double> StdinParser()
         {
-            // List to store parsed numbers
             List<double> numbersOnly = new List<double>();
 
-            // Open standard input for reading
             using (var reader = new StreamReader(Console.OpenStandardInput()))
             {
                 string line;
-                // Read each line from the input until there are no more lines
                 while ((line = reader.ReadLine()) != null)
                 {
-                    // Variables to track the start and end indices of each token
-                    int startIndex = -1;
-                    int endIndex = 0;
-
-                    // Loop through each character in the current line
-                    for (int i = 0; i < line.Length; i++)
+                    string[] tokens = line.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string token in tokens)
                     {
-                        // Check if the character is not a whitespace
-                        if (!char.IsWhiteSpace(line[i]))
-                        {
-                            // If startIndex is -1, set it to the current index
-                            if (startIndex == -1)
-                            {
-                                startIndex = i;
-                            }
-                        }
-                        else
-                        {
-                            // If startIndex is not -1 and a whitespace is encountered,
-                            // extract the token and add it to the numbersOnly list
-                            if (startIndex != -1)
-                            {
-                                string token = line.Substring(startIndex, endIndex - startIndex);
-                                // Parse the token into a double and add it to the list
-                                if (double.TryParse(token.Replace(".", ","), out double parsedNum))
-                                {
-                                    numbersOnly.Add(parsedNum);
-                                }
-                                // Reset startIndex for the next token
-                                startIndex = -1;
-                            }
-                        }
-                        // Increment endIndex to move to the next character
-                        endIndex++;
-                    }
-
-                    // Add the last token if it exists after the loop ends
-                    if (startIndex != -1)
-                    {
-                        string token = line.Substring(startIndex, endIndex - startIndex);
-                        // Parse the last token into a double and add it to the list
                         if (double.TryParse(token.Replace(".", ","), out double parsedNum))
                         {
                             numbersOnly.Add(parsedNum);
@@ -81,7 +40,6 @@ namespace Profiler
                 }
             }
 
-            // Return the list of parsed numbers
             return numbersOnly;
         }
         /// <summary>
