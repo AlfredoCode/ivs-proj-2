@@ -1,0 +1,155 @@
+\hypertarget{classProfiler_1_1Profiler}{}\doxysection{Profiler.\+Profiler Class Reference}
+\label{classProfiler_1_1Profiler}\index{Profiler.Profiler@{Profiler.Profiler}}
+
+
+Collaboration diagram for Profiler.\+Profiler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classProfiler_1_1Profiler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ double $>$ \mbox{\hyperlink{classProfiler_1_1Profiler_a730788eea8ed23088a66d56bd333e64d}{Stdin\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Reads standard input from the console and parses it into list of doubles Removes whitespace characters from the input \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classProfiler_1_1Profiler_a54422893484203db87ed6ca0db7d3bd1}{Calculate\+Deviation}} (List$<$ double $>$ numbers)
+\begin{DoxyCompactList}\small\item\em Calculates the standard deviation of a list of numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classProfiler_1_1Profiler_a7a89b641f05c324a2abbdd1645674c9c}{Main}} (string\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Profiler_8cs_source_l00016}{16}} of file \mbox{\hyperlink{Profiler_8cs_source}{Profiler.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProfiler_1_1Profiler_a54422893484203db87ed6ca0db7d3bd1}\label{classProfiler_1_1Profiler_a54422893484203db87ed6ca0db7d3bd1}} 
+\index{Profiler.Profiler@{Profiler.Profiler}!CalculateDeviation@{CalculateDeviation}}
+\index{CalculateDeviation@{CalculateDeviation}!Profiler.Profiler@{Profiler.Profiler}}
+\doxysubsubsection{\texorpdfstring{CalculateDeviation()}{CalculateDeviation()}}
+{\footnotesize\ttfamily static void Profiler.\+Profiler.\+Calculate\+Deviation (\begin{DoxyParamCaption}\item[{List$<$ double $>$}]{numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the standard deviation of a list of numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numbers} & The list of numbers.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Profiler_8cs_source_l00049}{49}} of file \mbox{\hyperlink{Profiler_8cs_source}{Profiler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{if}(numbers.Count <= 1)}
+\DoxyCodeLine{00052             \{}
+\DoxyCodeLine{00053                 Console.WriteLine(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056             \textcolor{keywordtype}{int} count = numbers.Count;}
+\DoxyCodeLine{00057             \textcolor{keywordtype}{double} sum = 0.0;}
+\DoxyCodeLine{00058             \textcolor{keywordtype}{double} sumQuares = 0.0;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{double} num \textcolor{keywordflow}{in} numbers)}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 sum = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(sum, num);                   \textcolor{comment}{// Sum ((x\_i))}}
+\DoxyCodeLine{00063                 sumQuares = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(sumQuares, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(2, num)); \textcolor{comment}{// Sum( (x\_i)\string^2 )}}
+\DoxyCodeLine{00064                 }
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066             \textcolor{keywordtype}{double} avg = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(count, sum);}
+\DoxyCodeLine{00067             \textcolor{keywordtype}{double} avgSquared = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(avg, avg);   \textcolor{comment}{// (x')\string^2}}
+\DoxyCodeLine{00068             \textcolor{keywordtype}{double} variance = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(1, count), \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(count, avgSquared), sumQuares)); \textcolor{comment}{// (Sum(x\_i)\string^2) -\/ (N * (x')\string^2) / (N -\/ 1)}}
+\DoxyCodeLine{00069             \textcolor{keywordtype}{double} s = \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(variance, 2);    \textcolor{comment}{// sqrt((Sum(x\_i)\string^2) -\/ (N * (x')\string^2) / (N -\/ 1))}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071             Console.WriteLine(s);}
+\DoxyCodeLine{00072         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProfiler_1_1Profiler_a54422893484203db87ed6ca0db7d3bd1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProfiler_1_1Profiler_a7a89b641f05c324a2abbdd1645674c9c}\label{classProfiler_1_1Profiler_a7a89b641f05c324a2abbdd1645674c9c}} 
+\index{Profiler.Profiler@{Profiler.Profiler}!Main@{Main}}
+\index{Main@{Main}!Profiler.Profiler@{Profiler.Profiler}}
+\doxysubsubsection{\texorpdfstring{Main()}{Main()}}
+{\footnotesize\ttfamily static void Profiler.\+Profiler.\+Main (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Profiler_8cs_source_l00073}{73}} of file \mbox{\hyperlink{Profiler_8cs_source}{Profiler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074         \{}
+\DoxyCodeLine{00075             List<double> numbersOnly = \mbox{\hyperlink{classProfiler_1_1Profiler_a730788eea8ed23088a66d56bd333e64d}{StdinParser}}();}
+\DoxyCodeLine{00076             \mbox{\hyperlink{classProfiler_1_1Profiler_a54422893484203db87ed6ca0db7d3bd1}{CalculateDeviation}}(numbersOnly);}
+\DoxyCodeLine{00077             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProfiler_1_1Profiler_a730788eea8ed23088a66d56bd333e64d}\label{classProfiler_1_1Profiler_a730788eea8ed23088a66d56bd333e64d}} 
+\index{Profiler.Profiler@{Profiler.Profiler}!StdinParser@{StdinParser}}
+\index{StdinParser@{StdinParser}!Profiler.Profiler@{Profiler.Profiler}}
+\doxysubsubsection{\texorpdfstring{StdinParser()}{StdinParser()}}
+{\footnotesize\ttfamily static List$<$double$>$ Profiler.\+Profiler.\+Stdin\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Reads standard input from the console and parses it into list of doubles Removes whitespace characters from the input 
+
+\begin{DoxyReturn}{Returns}
+A list of doubles parsed from the console input.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Profiler_8cs_source_l00023}{23}} of file \mbox{\hyperlink{Profiler_8cs_source}{Profiler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             List<double> numbersOnly = \textcolor{keyword}{new} List<double>();}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{keyword}{using} (var reader = \textcolor{keyword}{new} StreamReader(Console.OpenStandardInput()))}
+\DoxyCodeLine{00028             \{}
+\DoxyCodeLine{00029                 \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{00030                 \textcolor{keywordflow}{while} ((line = reader.ReadLine()) != \textcolor{keyword}{null})}
+\DoxyCodeLine{00031                 \{}
+\DoxyCodeLine{00032                     \textcolor{keywordtype}{string}[] tokens = line.Split(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[] \{ \textcolor{charliteral}{' '}, \textcolor{charliteral}{'\(\backslash\)t'}, \textcolor{charliteral}{'\(\backslash\)n'} \}, StringSplitOptions.RemoveEmptyEntries);}
+\DoxyCodeLine{00033                     \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} token \textcolor{keywordflow}{in} tokens)}
+\DoxyCodeLine{00034                     \{}
+\DoxyCodeLine{00035                         \textcolor{keywordflow}{if} (\textcolor{keywordtype}{double}.TryParse(token.Replace(\textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{},"{}}), out \textcolor{keywordtype}{double} parsedNum))}
+\DoxyCodeLine{00036                         \{}
+\DoxyCodeLine{00037                             numbersOnly.Add(parsedNum);}
+\DoxyCodeLine{00038                         \}}
+\DoxyCodeLine{00039                     \}}
+\DoxyCodeLine{00040                 \}}
+\DoxyCodeLine{00041             \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043             \textcolor{keywordflow}{return} numbersOnly;}
+\DoxyCodeLine{00044         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+profiler/\mbox{\hyperlink{Profiler_8cs}{Profiler.\+cs}}\end{DoxyCompactItemize}

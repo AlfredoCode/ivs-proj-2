@@ -1,0 +1,413 @@
+\hypertarget{MainPage_8xaml_8cs_source}{}\doxysection{Main\+Page.\+xaml.\+cs}
+\label{MainPage_8xaml_8cs_source}\index{ui/MainPage.xaml.cs@{ui/MainPage.xaml.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{/// <summary>}}
+\DoxyCodeLine{00002 \textcolor{comment}{}\textcolor{comment}{/// MainPage.xaml.cs}}
+\DoxyCodeLine{00003 \textcolor{comment}{}\textcolor{comment}{/// }}
+\DoxyCodeLine{00004 \textcolor{comment}{}\textcolor{comment}{/// Dominik Hofman (xhofma11)}}
+\DoxyCodeLine{00005 \textcolor{comment}{}\textcolor{comment}{/// Tomas Skypala (xskypa03)}}
+\DoxyCodeLine{00006 \textcolor{comment}{}\textcolor{comment}{/// Jana Veronika Moskvova (xmoskv01)}}
+\DoxyCodeLine{00007 \textcolor{comment}{}\textcolor{comment}{///}}
+\DoxyCodeLine{00008 \textcolor{comment}{}\textcolor{comment}{/// Implementation of MainPage}}
+\DoxyCodeLine{00009 \textcolor{comment}{}\textcolor{comment}{/// Last update 2024-\/04-\/18}}
+\DoxyCodeLine{00010 \textcolor{comment}{}\textcolor{comment}{/// <summary>}}
+\DoxyCodeLine{00011 \textcolor{comment}{}}
+\DoxyCodeLine{00012 \textcolor{keyword}{using} System.Globalization;}
+\DoxyCodeLine{00013 \textcolor{keyword}{using} \mbox{\hyperlink{namespaceMathlib}{Mathlib}};}
+\DoxyCodeLine{00014 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00015 \textcolor{keyword}{using} System.Text.RegularExpressions;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacecalculadora}{calculadora}}}
+\DoxyCodeLine{00018 \{\textcolor{comment}{}}
+\DoxyCodeLine{00019 \textcolor{comment}{    /// <summary>}}
+\DoxyCodeLine{00020 \textcolor{comment}{    /// Represents the main page of the calculator application.}}
+\DoxyCodeLine{00021 \textcolor{comment}{    /// </summary>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00022}\mbox{\hyperlink{classcalculadora_1_1MainPage}{00022}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{partial class }\mbox{\hyperlink{classcalculadora_1_1MainPage}{MainPage}} : ContentPage}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024 \textcolor{comment}{}}
+\DoxyCodeLine{00025 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00026 \textcolor{comment}{        /// Initializes a new instance of the MainPage class.}}
+\DoxyCodeLine{00027 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00028}\mbox{\hyperlink{classcalculadora_1_1MainPage_a4447c0ba1101f02bb69bfe3baad62e5c}{00028}} \textcolor{comment}{}        \textcolor{keyword}{public} \mbox{\hyperlink{classcalculadora_1_1MainPage_a4447c0ba1101f02bb69bfe3baad62e5c}{MainPage}}()}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             InitializeComponent();}
+\DoxyCodeLine{00031             keyInput.Completed += \mbox{\hyperlink{classcalculadora_1_1MainPage_a0e8470fd60beee16d325c06d13feb84a}{OnEnterPressed}};}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033 \textcolor{comment}{}}
+\DoxyCodeLine{00034 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00035 \textcolor{comment}{        /// Handles the event when the enter key is pressed.}}
+\DoxyCodeLine{00036 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00037 \textcolor{comment}{        /// <param name="{}sender"{}>The object that raised the event.</param>}}
+\DoxyCodeLine{00038 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00039}\mbox{\hyperlink{classcalculadora_1_1MainPage_a0e8470fd60beee16d325c06d13feb84a}{00039}} \textcolor{comment}{}        \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a0e8470fd60beee16d325c06d13feb84a}{OnEnterPressed}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00040         \{}
+\DoxyCodeLine{00041             \mbox{\hyperlink{classcalculadora_1_1MainPage_a3ab09add56679be5a7f4d8707a65e2bf}{OnEquals}}(sender, e);}
+\DoxyCodeLine{00042         \}}
+\DoxyCodeLine{00043 \textcolor{comment}{}}
+\DoxyCodeLine{00044 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00045 \textcolor{comment}{        /// Handles the event when the page is loaded.}}
+\DoxyCodeLine{00046 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00047 \textcolor{comment}{        /// <param name="{}sender"{}>The object that raised the event.</param>}}
+\DoxyCodeLine{00048 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00049}\mbox{\hyperlink{classcalculadora_1_1MainPage_a32e872e227256c97824ff64d0b488d87}{00049}} \textcolor{comment}{}        \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a32e872e227256c97824ff64d0b488d87}{OnPageLoaded}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             keyInput.Focus();}
+\DoxyCodeLine{00052         \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{comment}{}}
+\DoxyCodeLine{00055 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00056 \textcolor{comment}{        /// Handles the event when text input is entered.}}
+\DoxyCodeLine{00057 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00058 \textcolor{comment}{        /// <param name="{}sender"{}>The object that raised the event.</param>}}
+\DoxyCodeLine{00059 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00060}\mbox{\hyperlink{classcalculadora_1_1MainPage_a0d784d690f78b0c614cd3983eabeb119}{00060}} \textcolor{comment}{}        \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a0d784d690f78b0c614cd3983eabeb119}{OnTextInput}}(\textcolor{keywordtype}{object} sender, TextChangedEventArgs e)}
+\DoxyCodeLine{00061         \{}
+\DoxyCodeLine{00062             \textcolor{keywordtype}{string} input = e.NewTextValue;}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{switch} (input)}
+\DoxyCodeLine{00064             \{}
+\DoxyCodeLine{00065                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}c"{}}:}
+\DoxyCodeLine{00066                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a4405161df5fb4d47fccb3ba9ae86ceef}{OnClear}}(sender, e);}
+\DoxyCodeLine{00067                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00068                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}0"{}}:}
+\DoxyCodeLine{00069                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a71d30a5acd363a74e52d22957619c04d}{OnNumberSelection0}}(sender, e);}
+\DoxyCodeLine{00070                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}1"{}}:}
+\DoxyCodeLine{00072                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a79c321656d353021be71e5fbc9a3a52e}{OnNumberSelection1}}(sender, e);}
+\DoxyCodeLine{00073                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}2"{}}:}
+\DoxyCodeLine{00075                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a98d5e2ac00a5cc1ed34c86fe12edafe3}{OnNumberSelection2}}(sender, e);}
+\DoxyCodeLine{00076                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}3"{}}:}
+\DoxyCodeLine{00078                     \mbox{\hyperlink{classcalculadora_1_1MainPage_acd5da3331e170d2ee79dd2cce4e2b871}{OnNumberSelection3}}(sender, e);}
+\DoxyCodeLine{00079                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}4"{}}:}
+\DoxyCodeLine{00081                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a68151813b6b58378fcb00855f095f043}{OnNumberSelection4}}(sender, e);}
+\DoxyCodeLine{00082                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}5"{}}:}
+\DoxyCodeLine{00084                     \mbox{\hyperlink{classcalculadora_1_1MainPage_aa06e0cefb12a4d26be86a6f5a2ac3c3d}{OnNumberSelection5}}(sender, e);}
+\DoxyCodeLine{00085                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00086                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}6"{}}:}
+\DoxyCodeLine{00087                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a0e7a954143503c1c2a8609a2b37b162c}{OnNumberSelection6}}(sender, e);}
+\DoxyCodeLine{00088                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00089                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}7"{}}:}
+\DoxyCodeLine{00090                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a3ce442330f43c12674c59f8f1aa8dfe2}{OnNumberSelection7}}(sender, e);}
+\DoxyCodeLine{00091                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00092                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}8"{}}:}
+\DoxyCodeLine{00093                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a1a135eceb9846921e5daf1ba2ad1d3cc}{OnNumberSelection8}}(sender, e);}
+\DoxyCodeLine{00094                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00095                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}9"{}}:}
+\DoxyCodeLine{00096                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a62d2d073baef5506d6a53d3a52c55a89}{OnNumberSelection9}}(sender, e);}
+\DoxyCodeLine{00097                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00098                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}+"{}}:}
+\DoxyCodeLine{00099                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a4047c59a6306a9cc27f134b9d193de38}{OnAdd}}(sender, e);}
+\DoxyCodeLine{00100                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00101                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}-\/"{}}:}
+\DoxyCodeLine{00102                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a0dc6c66b3ea3dfa4400eeaa25028f297}{OnSub}}(sender, e);}
+\DoxyCodeLine{00103                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00104                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}*"{}}:}
+\DoxyCodeLine{00105                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a843f3a03d1068e34ae7f8fc3809b0479}{OnMultiply}}(sender, e);}
+\DoxyCodeLine{00106                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}/"{}}:}
+\DoxyCodeLine{00108                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a33f19f1d3c7521618a8c3311d90641d7}{OnDivision}}(sender, e);}
+\DoxyCodeLine{00109                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}\string^"{}}:}
+\DoxyCodeLine{00111                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a1a3564a421eb9d4272e6d25ae6aaa4fb}{OnSquared}}(sender, e);}
+\DoxyCodeLine{00112                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00113                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}!"{}}:}
+\DoxyCodeLine{00114                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a73af21da77fb3ecde1a1c79de856efb2}{OnFactorial}}(sender, e);}
+\DoxyCodeLine{00115                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00116                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}r"{}}:}
+\DoxyCodeLine{00117                     \mbox{\hyperlink{classcalculadora_1_1MainPage_ab484bcc49b24cef2957ed763bf504afc}{OnRandom}}(sender, e);}
+\DoxyCodeLine{00118                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00119                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}\%"{}}:}
+\DoxyCodeLine{00120                     \mbox{\hyperlink{classcalculadora_1_1MainPage_a25ba4573c9b7af1be3e050facf72b886}{OnModulo}}(sender, e);}
+\DoxyCodeLine{00121                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00122                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{},"{}}:}
+\DoxyCodeLine{00123                     \mbox{\hyperlink{classcalculadora_1_1MainPage_aa96d3fe0132cc61e69c9867c650a113b}{OnComma}}(sender, e);}
+\DoxyCodeLine{00124                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00126                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129             \textcolor{comment}{// Clear the text in the keyInput Entry after each input}}
+\DoxyCodeLine{00130             keyInput.Text = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00131         \}\textcolor{comment}{}}
+\DoxyCodeLine{00132 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00133 \textcolor{comment}{        /// Clears the result text and sets it to "{}0"{}.}}
+\DoxyCodeLine{00134 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00135 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00136 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00137}\mbox{\hyperlink{classcalculadora_1_1MainPage_a4405161df5fb4d47fccb3ba9ae86ceef}{00137}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a4405161df5fb4d47fccb3ba9ae86ceef}{OnClear}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00138         \{}
+\DoxyCodeLine{00139             result.Text = \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{00140             keyInput.Focus();}
+\DoxyCodeLine{00141         \}}
+\DoxyCodeLine{00142 \textcolor{comment}{}}
+\DoxyCodeLine{00143 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00144 \textcolor{comment}{        /// Appends "{}\string^"{} to the result text.}}
+\DoxyCodeLine{00145 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00146 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00147 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00148}\mbox{\hyperlink{classcalculadora_1_1MainPage_a1a3564a421eb9d4272e6d25ae6aaa4fb}{00148}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a1a3564a421eb9d4272e6d25ae6aaa4fb}{OnSquared}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00149         \{}
+\DoxyCodeLine{00150             result.Text += \textcolor{stringliteral}{"{}\string^"{}};}
+\DoxyCodeLine{00151             keyInput.Focus();}
+\DoxyCodeLine{00152         \}}
+\DoxyCodeLine{00153 \textcolor{comment}{}}
+\DoxyCodeLine{00154 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00155 \textcolor{comment}{        /// Appends "{}√"{} to the result text.}}
+\DoxyCodeLine{00156 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00157 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00158 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00159}\mbox{\hyperlink{classcalculadora_1_1MainPage_a06a616a3d98fd307013377ffdae94edc}{00159}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a06a616a3d98fd307013377ffdae94edc}{OnSquareRoot}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00160         \{}
+\DoxyCodeLine{00161             result.Text += \textcolor{stringliteral}{"{}√"{}};}
+\DoxyCodeLine{00162             keyInput.Focus();}
+\DoxyCodeLine{00163         \}}
+\DoxyCodeLine{00164 \textcolor{comment}{}}
+\DoxyCodeLine{00165 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00166 \textcolor{comment}{        /// Appends "{}0"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00167 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00168 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00169 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00170}\mbox{\hyperlink{classcalculadora_1_1MainPage_a71d30a5acd363a74e52d22957619c04d}{00170}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a71d30a5acd363a74e52d22957619c04d}{OnNumberSelection0}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00171         \{}
+\DoxyCodeLine{00172             result.Text += \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{00173             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00174             keyInput.Focus();}
+\DoxyCodeLine{00175         \}}
+\DoxyCodeLine{00176 \textcolor{comment}{}}
+\DoxyCodeLine{00177 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00178 \textcolor{comment}{        /// Appends "{}1"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00179 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00180 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00181 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00182}\mbox{\hyperlink{classcalculadora_1_1MainPage_a79c321656d353021be71e5fbc9a3a52e}{00182}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a79c321656d353021be71e5fbc9a3a52e}{OnNumberSelection1}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00183         \{}
+\DoxyCodeLine{00184             result.Text += \textcolor{stringliteral}{"{}1"{}};}
+\DoxyCodeLine{00185             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00186             keyInput.Focus();}
+\DoxyCodeLine{00187         \}}
+\DoxyCodeLine{00188 \textcolor{comment}{}}
+\DoxyCodeLine{00189 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00190 \textcolor{comment}{        /// Appends "{}2"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00191 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00192 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00193 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00194}\mbox{\hyperlink{classcalculadora_1_1MainPage_a98d5e2ac00a5cc1ed34c86fe12edafe3}{00194}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a98d5e2ac00a5cc1ed34c86fe12edafe3}{OnNumberSelection2}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00195         \{}
+\DoxyCodeLine{00196             result.Text += \textcolor{stringliteral}{"{}2"{}};}
+\DoxyCodeLine{00197             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00198             keyInput.Focus();}
+\DoxyCodeLine{00199         \}}
+\DoxyCodeLine{00200 \textcolor{comment}{}}
+\DoxyCodeLine{00201 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00202 \textcolor{comment}{        /// Appends "{}3"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00203 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00204 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00205 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00206}\mbox{\hyperlink{classcalculadora_1_1MainPage_acd5da3331e170d2ee79dd2cce4e2b871}{00206}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_acd5da3331e170d2ee79dd2cce4e2b871}{OnNumberSelection3}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00207         \{}
+\DoxyCodeLine{00208             result.Text += \textcolor{stringliteral}{"{}3"{}};}
+\DoxyCodeLine{00209             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00210             keyInput.Focus();}
+\DoxyCodeLine{00211         \}}
+\DoxyCodeLine{00212 \textcolor{comment}{}}
+\DoxyCodeLine{00213 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00214 \textcolor{comment}{        /// Appends "{}4"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00215 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00216 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00217 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00218}\mbox{\hyperlink{classcalculadora_1_1MainPage_a68151813b6b58378fcb00855f095f043}{00218}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a68151813b6b58378fcb00855f095f043}{OnNumberSelection4}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00219         \{}
+\DoxyCodeLine{00220             result.Text += \textcolor{stringliteral}{"{}4"{}};}
+\DoxyCodeLine{00221             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00222             keyInput.Focus();}
+\DoxyCodeLine{00223         \}}
+\DoxyCodeLine{00224 \textcolor{comment}{}}
+\DoxyCodeLine{00225 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00226 \textcolor{comment}{        /// Appends "{}5"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00227 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00228 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00229 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00230}\mbox{\hyperlink{classcalculadora_1_1MainPage_aa06e0cefb12a4d26be86a6f5a2ac3c3d}{00230}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_aa06e0cefb12a4d26be86a6f5a2ac3c3d}{OnNumberSelection5}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00231         \{}
+\DoxyCodeLine{00232             result.Text += \textcolor{stringliteral}{"{}5"{}};}
+\DoxyCodeLine{00233             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00234             keyInput.Focus();}
+\DoxyCodeLine{00235         \}}
+\DoxyCodeLine{00236 \textcolor{comment}{}}
+\DoxyCodeLine{00237 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00238 \textcolor{comment}{        /// Appends "{}6"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00239 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00240 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00241 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00242}\mbox{\hyperlink{classcalculadora_1_1MainPage_a0e7a954143503c1c2a8609a2b37b162c}{00242}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a0e7a954143503c1c2a8609a2b37b162c}{OnNumberSelection6}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00243         \{}
+\DoxyCodeLine{00244             result.Text += \textcolor{stringliteral}{"{}6"{}};}
+\DoxyCodeLine{00245             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00246             keyInput.Focus();}
+\DoxyCodeLine{00247         \}}
+\DoxyCodeLine{00248 \textcolor{comment}{}}
+\DoxyCodeLine{00249 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00250 \textcolor{comment}{        /// Appends "{}7"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00251 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00252 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00253 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00254}\mbox{\hyperlink{classcalculadora_1_1MainPage_a3ce442330f43c12674c59f8f1aa8dfe2}{00254}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a3ce442330f43c12674c59f8f1aa8dfe2}{OnNumberSelection7}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00255         \{}
+\DoxyCodeLine{00256             result.Text += \textcolor{stringliteral}{"{}7"{}};}
+\DoxyCodeLine{00257             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00258             keyInput.Focus();}
+\DoxyCodeLine{00259         \}}
+\DoxyCodeLine{00260 \textcolor{comment}{}}
+\DoxyCodeLine{00261 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00262 \textcolor{comment}{        /// Appends "{}8"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00263 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00264 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00265 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00266}\mbox{\hyperlink{classcalculadora_1_1MainPage_a1a135eceb9846921e5daf1ba2ad1d3cc}{00266}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a1a135eceb9846921e5daf1ba2ad1d3cc}{OnNumberSelection8}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00267         \{}
+\DoxyCodeLine{00268             result.Text += \textcolor{stringliteral}{"{}8"{}};}
+\DoxyCodeLine{00269             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00270             keyInput.Focus();}
+\DoxyCodeLine{00271         \}}
+\DoxyCodeLine{00272 \textcolor{comment}{}}
+\DoxyCodeLine{00273 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00274 \textcolor{comment}{        /// Appends "{}9"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00275 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00276 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00277 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00278}\mbox{\hyperlink{classcalculadora_1_1MainPage_a62d2d073baef5506d6a53d3a52c55a89}{00278}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a62d2d073baef5506d6a53d3a52c55a89}{OnNumberSelection9}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00279         \{}
+\DoxyCodeLine{00280             result.Text += \textcolor{stringliteral}{"{}9"{}};}
+\DoxyCodeLine{00281             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00282             keyInput.Focus();}
+\DoxyCodeLine{00283         \}}
+\DoxyCodeLine{00284 \textcolor{comment}{}}
+\DoxyCodeLine{00285 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00286 \textcolor{comment}{        /// Appends "{}/"{} to the result text.}}
+\DoxyCodeLine{00287 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00288 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00289 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00290}\mbox{\hyperlink{classcalculadora_1_1MainPage_a33f19f1d3c7521618a8c3311d90641d7}{00290}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a33f19f1d3c7521618a8c3311d90641d7}{OnDivision}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00291         \{}
+\DoxyCodeLine{00292             result.Text += \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00293             keyInput.Focus();}
+\DoxyCodeLine{00294         \}}
+\DoxyCodeLine{00295 \textcolor{comment}{}}
+\DoxyCodeLine{00296 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00297 \textcolor{comment}{        /// Appends "{}*"{} to the result text.}}
+\DoxyCodeLine{00298 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00299 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00300 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00301}\mbox{\hyperlink{classcalculadora_1_1MainPage_a843f3a03d1068e34ae7f8fc3809b0479}{00301}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a843f3a03d1068e34ae7f8fc3809b0479}{OnMultiply}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00302         \{}
+\DoxyCodeLine{00303             result.Text += \textcolor{stringliteral}{"{}*"{}};}
+\DoxyCodeLine{00304             keyInput.Focus();}
+\DoxyCodeLine{00305         \}}
+\DoxyCodeLine{00306 \textcolor{comment}{}}
+\DoxyCodeLine{00307 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00308 \textcolor{comment}{        /// Appends "{}-\/"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00309 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00310 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00311 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00312}\mbox{\hyperlink{classcalculadora_1_1MainPage_a0dc6c66b3ea3dfa4400eeaa25028f297}{00312}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a0dc6c66b3ea3dfa4400eeaa25028f297}{OnSub}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00313         \{}
+\DoxyCodeLine{00314             result.Text += \textcolor{stringliteral}{"{}-\/"{}};}
+\DoxyCodeLine{00315             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00316             keyInput.Focus();}
+\DoxyCodeLine{00317         \}}
+\DoxyCodeLine{00318 \textcolor{comment}{}}
+\DoxyCodeLine{00319 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00320 \textcolor{comment}{        /// Appends "{}+"{} to the result text.}}
+\DoxyCodeLine{00321 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00322 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00323 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00324}\mbox{\hyperlink{classcalculadora_1_1MainPage_a4047c59a6306a9cc27f134b9d193de38}{00324}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a4047c59a6306a9cc27f134b9d193de38}{OnAdd}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00325         \{}
+\DoxyCodeLine{00326             result.Text += \textcolor{stringliteral}{"{}+"{}};}
+\DoxyCodeLine{00327             keyInput.Focus();}
+\DoxyCodeLine{00328         \}}
+\DoxyCodeLine{00329 \textcolor{comment}{}}
+\DoxyCodeLine{00330 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00331 \textcolor{comment}{        /// Appends "{}!"{} to the result text.}}
+\DoxyCodeLine{00332 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00333 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00334 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00335}\mbox{\hyperlink{classcalculadora_1_1MainPage_a73af21da77fb3ecde1a1c79de856efb2}{00335}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a73af21da77fb3ecde1a1c79de856efb2}{OnFactorial}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00336         \{}
+\DoxyCodeLine{00337             result.Text += \textcolor{stringliteral}{"{}!"{}};}
+\DoxyCodeLine{00338             keyInput.Focus();}
+\DoxyCodeLine{00339         \}}
+\DoxyCodeLine{00340 \textcolor{comment}{}}
+\DoxyCodeLine{00341 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00342 \textcolor{comment}{        /// Appends "{}R"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00343 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00344 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00345 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00346}\mbox{\hyperlink{classcalculadora_1_1MainPage_ab484bcc49b24cef2957ed763bf504afc}{00346}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_ab484bcc49b24cef2957ed763bf504afc}{OnRandom}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00347         \{}
+\DoxyCodeLine{00348             result.Text += \textcolor{stringliteral}{"{}R"{}};}
+\DoxyCodeLine{00349             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00350             keyInput.Focus();}
+\DoxyCodeLine{00351         \}}
+\DoxyCodeLine{00352 \textcolor{comment}{}}
+\DoxyCodeLine{00353 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00354 \textcolor{comment}{        /// Appends "{}\%"{} to the result text.}}
+\DoxyCodeLine{00355 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00356 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00357 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00358}\mbox{\hyperlink{classcalculadora_1_1MainPage_a25ba4573c9b7af1be3e050facf72b886}{00358}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a25ba4573c9b7af1be3e050facf72b886}{OnModulo}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00359         \{}
+\DoxyCodeLine{00360             result.Text += \textcolor{stringliteral}{"{}\%"{}};}
+\DoxyCodeLine{00361             keyInput.Focus();}
+\DoxyCodeLine{00362         \}}
+\DoxyCodeLine{00363 \textcolor{comment}{}}
+\DoxyCodeLine{00364 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00365 \textcolor{comment}{        /// Appends "{}π"{} to the result text and removes leading zeros.}}
+\DoxyCodeLine{00366 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00367 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00368 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00369}\mbox{\hyperlink{classcalculadora_1_1MainPage_a6176a811421b0ed31a85dbe09f4bcdc3}{00369}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a6176a811421b0ed31a85dbe09f4bcdc3}{OnPi}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00370         \{}
+\DoxyCodeLine{00371             result.Text += \textcolor{stringliteral}{"{}π"{}};}
+\DoxyCodeLine{00372             result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a3990cf01222c53df92312538d76a9a72}{ridoff0}}(result.Text);}
+\DoxyCodeLine{00373             keyInput.Focus();}
+\DoxyCodeLine{00374         \}}
+\DoxyCodeLine{00375 \textcolor{comment}{}}
+\DoxyCodeLine{00376 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00377 \textcolor{comment}{        /// Appends "{},"{} to the result text.}}
+\DoxyCodeLine{00378 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00379 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00380 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00381}\mbox{\hyperlink{classcalculadora_1_1MainPage_aa96d3fe0132cc61e69c9867c650a113b}{00381}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_aa96d3fe0132cc61e69c9867c650a113b}{OnComma}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00382         \{}
+\DoxyCodeLine{00383             result.Text += \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00384             keyInput.Focus();}
+\DoxyCodeLine{00385         \}}
+\DoxyCodeLine{00386 \textcolor{comment}{}}
+\DoxyCodeLine{00387 \textcolor{comment}{        /// <summary>}}
+\DoxyCodeLine{00388 \textcolor{comment}{        /// Tries to evaluate the expression in the result text and updates the result text accordingly.}}
+\DoxyCodeLine{00389 \textcolor{comment}{        /// </summary>}}
+\DoxyCodeLine{00390 \textcolor{comment}{        /// <param name="{}sender"{}>The event sender.</param>}}
+\DoxyCodeLine{00391 \textcolor{comment}{        /// <param name="{}e"{}>The event arguments.</param>}}
+\DoxyCodeLine{\Hypertarget{MainPage_8xaml_8cs_source_l00392}\mbox{\hyperlink{classcalculadora_1_1MainPage_a3ab09add56679be5a7f4d8707a65e2bf}{00392}} \textcolor{comment}{}        \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculadora_1_1MainPage_a3ab09add56679be5a7f4d8707a65e2bf}{OnEquals}}(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00393         \{}
+\DoxyCodeLine{00394             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00395             \{}
+\DoxyCodeLine{00396                 result.Text = \mbox{\hyperlink{namespaceMathlib}{Mathlib}}.\mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a05e8c7ad2cd0117f7843754bb48f64cd}{calculate}}(result.Text);}
+\DoxyCodeLine{00397             \}}
+\DoxyCodeLine{00398             \textcolor{keywordflow}{catch} (Exception ex)}
+\DoxyCodeLine{00399             \{}
+\DoxyCodeLine{00400                 result.Text = ex.Message;}
+\DoxyCodeLine{00401             \}}
+\DoxyCodeLine{00402             keyInput.Focus();}
+\DoxyCodeLine{00403         \}}
+\DoxyCodeLine{00404 }
+\DoxyCodeLine{00405 }
+\DoxyCodeLine{00406     \}}
+\DoxyCodeLine{00407 \}}
+
+\end{DoxyCode}

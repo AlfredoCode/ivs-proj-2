@@ -1,0 +1,4 @@
+<map id="OperationsTests.Tests.Power_Test" name="OperationsTests.Tests.Power_Test">
+<area shape="rect" id="node1" title="Power test to check if power works correctly checks: normal use of power checks: zero checks: negativ..." alt="" coords="5,5,245,32"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a698cd22098243cdc44b2129755f1a1dd" title="Function to power throws exeption if we do power by non Natural number if we power by zero or power z..." alt="" coords="293,5,471,32"/>
+</map>

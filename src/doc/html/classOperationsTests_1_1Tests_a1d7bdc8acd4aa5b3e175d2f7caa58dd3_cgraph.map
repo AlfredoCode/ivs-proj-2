@@ -1,0 +1,4 @@
+<map id="OperationsTests.Tests.Sqrt_Test" name="OperationsTests.Tests.Sqrt_Test">
+<area shape="rect" id="node1" title="Sqrt test to check if square root works correctly checks: normal use of square root checks: number be..." alt="" coords="5,5,232,32"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a5b5effec47a495e81d95e4f598a416c5" title="Function to sqrt throws exeption if we do sqrt by non Natural number throws exeption if we sqrt negat..." alt="" coords="280,5,456,32"/>
+</map>

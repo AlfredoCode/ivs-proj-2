@@ -1,0 +1,9 @@
+<map id="Profiler.Profiler.CalculateDeviation" name="Profiler.Profiler.CalculateDeviation">
+<area shape="rect" id="node1" title="Calculates the standard deviation of a list of numbers." alt="" coords="5,125,187,166"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a8ad2e15390eaac8c9d51f54c8974f1e8" title="Function to add" alt="" coords="236,5,411,32"/>
+<area shape="rect" id="node3" href="$classMathlib_1_1Operations.html#a68b338939e3f132442f6a474b52cdc44" title="Function to div throws exeption if we division by 0" alt="" coords="237,56,409,83"/>
+<area shape="rect" id="node4" href="$classMathlib_1_1Operations.html#aeb9c46e248aa444ec14d411d6fb576da" title="Function to mul" alt="" coords="236,107,411,133"/>
+<area shape="rect" id="node5" href="$classMathlib_1_1Operations.html#a698cd22098243cdc44b2129755f1a1dd" title="Function to power throws exeption if we do power by non Natural number if we power by zero or power z..." alt="" coords="235,157,412,184"/>
+<area shape="rect" id="node6" href="$classMathlib_1_1Operations.html#a5b5effec47a495e81d95e4f598a416c5" title="Function to sqrt throws exeption if we do sqrt by non Natural number throws exeption if we sqrt negat..." alt="" coords="235,208,411,235"/>
+<area shape="rect" id="node7" href="$classMathlib_1_1Operations.html#a97408967ea0522b64bcb20a5d7324c3a" title="Function to sub" alt="" coords="236,259,411,285"/>
+</map>

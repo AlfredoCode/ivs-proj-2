@@ -1,0 +1,30 @@
+\hypertarget{generate_8py_source}{}\doxysection{generate.\+py}
+\label{generate_8py_source}\index{profiler/generate.py@{profiler/generate.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{generate_8py_source_l00001}\mbox{\hyperlink{namespacegenerate}{00001}} \textcolor{keyword}{import} sys}
+\DoxyCodeLine{00002 \textcolor{keyword}{import} random}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keywordflow}{if} len(sys.argv) < 2:}
+\DoxyCodeLine{00005     print(\textcolor{stringliteral}{"{}Usage: python3 generate.py maxNum [random]"{}})}
+\DoxyCodeLine{00006     sys.exit(1)}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{generate_8py_source_l00009}\mbox{\hyperlink{namespacegenerate_ae239de760befec8d930b32d17a2b9a77}{00009}}     arg1 = int(sys.argv[1])}
+\DoxyCodeLine{00010 \textcolor{keywordflow}{except} ValueError:}
+\DoxyCodeLine{00011     print(\textcolor{stringliteral}{"{}Error: maxNum must be an integer"{}})}
+\DoxyCodeLine{00012     sys.exit(1)}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{generate_8py_source_l00014}\mbox{\hyperlink{namespacegenerate_ad929f6dea22577e8caeb6e37dc2605ad}{00014}} maxNum = arg1}
+\DoxyCodeLine{00015 \textcolor{keyword}{with} open(f\textcolor{stringliteral}{"{}data\{maxNum\}.txt"{}}, \textcolor{stringliteral}{"{}w"{}}) \textcolor{keyword}{as} f\_data, open(f\textcolor{stringliteral}{"{}data\{maxNum\}\_ref"{}}, \textcolor{stringliteral}{"{}w"{}}) \textcolor{keyword}{as} f\_ref:}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{if} len(sys.argv) == 3 \textcolor{keywordflow}{and} sys.argv[2] == \textcolor{stringliteral}{"{}random"{}}:}
+\DoxyCodeLine{00017         \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(1, maxNum + 1):}
+\DoxyCodeLine{\Hypertarget{generate_8py_source_l00018}\mbox{\hyperlink{namespacegenerate_a38fedf638cc711b50f1d8e8c954907d0}{00018}}             rand\_num = random.randint(0, maxNum)}
+\DoxyCodeLine{00019             f\_data.write(str(rand\_num) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{00020             f\_ref.write(str(rand\_num) + \textcolor{stringliteral}{"{};"{}})}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(1, maxNum + 1):}
+\DoxyCodeLine{00023             f\_data.write(str(i) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{00024             f\_ref.write(str(i) + \textcolor{stringliteral}{"{};"{}})}
+
+\end{DoxyCode}

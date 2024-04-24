@@ -1,0 +1,62 @@
+\hypertarget{classcalculadora_1_1MauiProgram}{}\doxysection{calculadora.\+Maui\+Program Class Reference}
+\label{classcalculadora_1_1MauiProgram}\index{calculadora.MauiProgram@{calculadora.MauiProgram}}
+
+
+Collaboration diagram for calculadora.\+Maui\+Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classcalculadora_1_1MauiProgram__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Maui\+App \mbox{\hyperlink{classcalculadora_1_1MauiProgram_aea94911141449819ef63a52fc97b144a}{Create\+Maui\+App}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MauiProgram_8cs_source_l00005}{5}} of file \mbox{\hyperlink{MauiProgram_8cs_source}{Maui\+Program.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcalculadora_1_1MauiProgram_aea94911141449819ef63a52fc97b144a}\label{classcalculadora_1_1MauiProgram_aea94911141449819ef63a52fc97b144a}} 
+\index{calculadora.MauiProgram@{calculadora.MauiProgram}!CreateMauiApp@{CreateMauiApp}}
+\index{CreateMauiApp@{CreateMauiApp}!calculadora.MauiProgram@{calculadora.MauiProgram}}
+\doxysubsubsection{\texorpdfstring{CreateMauiApp()}{CreateMauiApp()}}
+{\footnotesize\ttfamily static Maui\+App calculadora.\+Maui\+Program.\+Create\+Maui\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{MauiProgram_8cs_source_l00007}{7}} of file \mbox{\hyperlink{MauiProgram_8cs_source}{Maui\+Program.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008         \{}
+\DoxyCodeLine{00009             var builder = MauiApp.CreateBuilder();}
+\DoxyCodeLine{00010             builder}
+\DoxyCodeLine{00011                 .UseMauiApp<App>()}
+\DoxyCodeLine{00012                 .ConfigureFonts(fonts =>}
+\DoxyCodeLine{00013                 \{}
+\DoxyCodeLine{00014                     fonts.AddFont(\textcolor{stringliteral}{"{}OpenSans-\/Regular.ttf"{}}, \textcolor{stringliteral}{"{}OpenSansRegular"{}});}
+\DoxyCodeLine{00015                     fonts.AddFont(\textcolor{stringliteral}{"{}OpenSans-\/Semibold.ttf"{}}, \textcolor{stringliteral}{"{}OpenSansSemibold"{}});}
+\DoxyCodeLine{00016                 \});}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#if DEBUG}}
+\DoxyCodeLine{00019             builder.Logging.AddDebug();}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022             \textcolor{keywordflow}{return} builder.Build();}
+\DoxyCodeLine{00023         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\mbox{\hyperlink{MauiProgram_8cs}{Maui\+Program.\+cs}}\end{DoxyCompactItemize}

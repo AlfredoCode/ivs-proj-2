@@ -1,0 +1,4 @@
+<map id="OperationsTests.Tests.Factorial_Test" name="OperationsTests.Tests.Factorial_Test">
+<area shape="rect" id="node1" title="Faktorial test to check if faktorial works correctly checks: normal use of faktorial checks: negative..." alt="" coords="5,5,260,32"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a408f8e3cf76c1736486f7f86e11222a9" title="Function to faktorial throws exeption if we do faktorial by negative number" alt="" coords="308,5,515,32"/>
+</map>

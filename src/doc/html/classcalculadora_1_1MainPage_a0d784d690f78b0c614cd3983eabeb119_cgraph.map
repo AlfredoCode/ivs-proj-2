@@ -1,0 +1,24 @@
+<map id="calculadora.MainPage.OnTextInput" name="calculadora.MainPage.OnTextInput">
+<area shape="rect" id="node1" title="Handles the event when text input is entered." alt="" coords="5,525,219,566"/>
+<area shape="rect" id="node2" href="$classcalculadora_1_1MainPage.html#a4047c59a6306a9cc27f134b9d193de38" title="Appends &quot;+&quot; to the result text." alt="" coords="282,5,493,32"/>
+<area shape="rect" id="node3" href="$classcalculadora_1_1MainPage.html#a4405161df5fb4d47fccb3ba9ae86ceef" title="Clears the result text and sets it to &quot;0&quot;." alt="" coords="277,56,497,83"/>
+<area shape="rect" id="node4" href="$classcalculadora_1_1MainPage.html#aa96d3fe0132cc61e69c9867c650a113b" title="Appends &quot;,&quot; to the result text." alt="" coords="269,107,506,133"/>
+<area shape="rect" id="node5" href="$classcalculadora_1_1MainPage.html#a33f19f1d3c7521618a8c3311d90641d7" title="Appends &quot;/&quot; to the result text." alt="" coords="268,157,507,184"/>
+<area shape="rect" id="node6" href="$classcalculadora_1_1MainPage.html#a73af21da77fb3ecde1a1c79de856efb2" title="Appends &quot;!&quot; to the result text." alt="" coords="267,208,508,235"/>
+<area shape="rect" id="node7" href="$classcalculadora_1_1MainPage.html#a25ba4573c9b7af1be3e050facf72b886" title="Appends &quot;%&quot; to the result text." alt="" coords="270,259,505,285"/>
+<area shape="rect" id="node8" href="$classcalculadora_1_1MainPage.html#a843f3a03d1068e34ae7f8fc3809b0479" title="Appends &quot;*&quot; to the result text." alt="" coords="268,309,507,336"/>
+<area shape="rect" id="node9" href="$classcalculadora_1_1MainPage.html#a71d30a5acd363a74e52d22957619c04d" title="Appends &quot;0&quot; to the result text and removes leading zeros." alt="" coords="268,361,507,402"/>
+<area shape="rect" id="node11" href="$classcalculadora_1_1MainPage.html#a79c321656d353021be71e5fbc9a3a52e" title="Appends &quot;1&quot; to the result text and removes leading zeros." alt="" coords="268,426,507,467"/>
+<area shape="rect" id="node12" href="$classcalculadora_1_1MainPage.html#a98d5e2ac00a5cc1ed34c86fe12edafe3" title="Appends &quot;2&quot; to the result text and removes leading zeros." alt="" coords="268,491,507,533"/>
+<area shape="rect" id="node13" href="$classcalculadora_1_1MainPage.html#acd5da3331e170d2ee79dd2cce4e2b871" title="Appends &quot;3&quot; to the result text and removes leading zeros." alt="" coords="268,557,507,598"/>
+<area shape="rect" id="node14" href="$classcalculadora_1_1MainPage.html#a68151813b6b58378fcb00855f095f043" title="Appends &quot;4&quot; to the result text and removes leading zeros." alt="" coords="268,622,507,663"/>
+<area shape="rect" id="node15" href="$classcalculadora_1_1MainPage.html#aa06e0cefb12a4d26be86a6f5a2ac3c3d" title="Appends &quot;5&quot; to the result text and removes leading zeros." alt="" coords="268,687,507,729"/>
+<area shape="rect" id="node16" href="$classcalculadora_1_1MainPage.html#a0e7a954143503c1c2a8609a2b37b162c" title="Appends &quot;6&quot; to the result text and removes leading zeros." alt="" coords="268,753,507,794"/>
+<area shape="rect" id="node17" href="$classcalculadora_1_1MainPage.html#a3ce442330f43c12674c59f8f1aa8dfe2" title="Appends &quot;7&quot; to the result text and removes leading zeros." alt="" coords="268,818,507,859"/>
+<area shape="rect" id="node18" href="$classcalculadora_1_1MainPage.html#a1a135eceb9846921e5daf1ba2ad1d3cc" title="Appends &quot;8&quot; to the result text and removes leading zeros." alt="" coords="268,883,507,925"/>
+<area shape="rect" id="node19" href="$classcalculadora_1_1MainPage.html#a62d2d073baef5506d6a53d3a52c55a89" title="Appends &quot;9&quot; to the result text and removes leading zeros." alt="" coords="268,949,507,990"/>
+<area shape="rect" id="node20" href="$classcalculadora_1_1MainPage.html#ab484bcc49b24cef2957ed763bf504afc" title="Appends &quot;R&quot; to the result text and removes leading zeros." alt="" coords="267,1015,507,1041"/>
+<area shape="rect" id="node21" href="$classcalculadora_1_1MainPage.html#a1a3564a421eb9d4272e6d25ae6aaa4fb" title="Appends &quot;^&quot; to the result text." alt="" coords="268,1065,507,1092"/>
+<area shape="rect" id="node22" href="$classcalculadora_1_1MainPage.html#a0dc6c66b3ea3dfa4400eeaa25028f297" title="Appends &quot;&#45;&quot; to the result text and removes leading zeros." alt="" coords="282,1116,493,1143"/>
+<area shape="rect" id="node10" href="$classMathlib_1_1Operations.html#a3990cf01222c53df92312538d76a9a72" title=" " alt="" coords="556,728,748,755"/>
+</map>

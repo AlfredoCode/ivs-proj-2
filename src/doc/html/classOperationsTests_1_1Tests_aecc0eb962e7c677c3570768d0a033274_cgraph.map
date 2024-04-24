@@ -1,0 +1,4 @@
+<map id="OperationsTests.Tests.Division_Test" name="OperationsTests.Tests.Division_Test">
+<area shape="rect" id="node1" title="Div test to check if div works correctly checks: normal use of div checks: negative numbers checks: z..." alt="" coords="5,5,259,32"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a68b338939e3f132442f6a474b52cdc44" title="Function to div throws exeption if we division by 0" alt="" coords="307,5,479,32"/>
+</map>

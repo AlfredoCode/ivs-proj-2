@@ -1,0 +1,48 @@
+Generates data, required for \mbox{\hyperlink{namespaceProfiler}{Profiler}} to work. \hypertarget{md_profiler_README_autotoc_md4}{}\doxysubsection{Usage\+:}\label{md_profiler_README_autotoc_md4}
+{\ttfamily python3 \mbox{\hyperlink{generate_8py}{generate.\+py}} max\+Nums \mbox{[} random \mbox{]}}\hypertarget{md_profiler_README_autotoc_md5}{}\doxysubsection{Arguments\+:}\label{md_profiler_README_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\ttfamily max\+Nums} -\/ Maximal amount of generated numbers.
+\item {\ttfamily random}
+\begin{DoxyItemize}
+\item If {\ttfamily random} argument is present, each generated number will be random in interval {\ttfamily $<$0; max\+Nums$>$}
+\item If {\ttfamily random} argument is not present, each generated number will be from interval {\ttfamily $<$1; max\+Nums$>$}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_profiler_README_autotoc_md6}{}\doxysubsection{Examples\+:}\label{md_profiler_README_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\ttfamily python3 \mbox{\hyperlink{generate_8py}{generate.\+py}} 5}
+\begin{DoxyItemize}
+\item Generates files {\ttfamily data5.\+txt} containing input for the {\ttfamily \mbox{\hyperlink{namespaceProfiler}{Profiler}}}and {\ttfamily data5\+\_\+ref} containing input for online calculators of the standard deviaton such as \href{https://www.hackmath.net/cz/kalkulacka/vypocet-smerodatne-odchylky}{\texttt{ this one}}.
+\item File contains numbers from in range {\ttfamily $<$1; 5$>$}
+\end{DoxyItemize}
+\item {\ttfamily python3 \mbox{\hyperlink{generate_8py}{generate.\+py}} 10 random}
+\begin{DoxyItemize}
+\item Generates files {\ttfamily data10.\+txt} containing input for the {\ttfamily \mbox{\hyperlink{namespaceProfiler}{Profiler}}}and {\ttfamily data10\+\_\+ref} containing input for online calculators of the standard deviaton such as \href{https://www.hackmath.net/cz/kalkulacka/vypocet-smerodatne-odchylky}{\texttt{ this one}}.
+\item File contains random numbers in range {\ttfamily $<$0; 10$>$}
+\end{DoxyItemize}
+\item {\ttfamily python3 \mbox{\hyperlink{generate_8py}{generate.\+py}} 0}
+\begin{DoxyItemize}
+\item Generates empty {\ttfamily data0.\+txt} and {\ttfamily data0\+\_\+ref} files.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_profiler_README_autotoc_md7}{}\doxysection{Profiler}\label{md_profiler_README_autotoc_md7}
+Calculates standard deviation for numeric data, passed through {\ttfamily stdin}. \hypertarget{md_profiler_README_autotoc_md8}{}\doxysubsubsection{Usage\+:}\label{md_profiler_README_autotoc_md8}
+{\ttfamily Profiler.\+exe} or {\ttfamily Profiler.\+exe $<$ data.\+txt}\hypertarget{md_profiler_README_autotoc_md9}{}\doxysubsubsection{Compilation\+:}\label{md_profiler_README_autotoc_md9}
+You can compile {\ttfamily \mbox{\hyperlink{namespaceProfiler}{Profiler}}} following these steps\+:
+\begin{DoxyEnumerate}
+\item Open your Windows Power\+Shell or cmd
+\item Set your current path to {\ttfamily ivs-\/proj-\/2/src/profiler/}
+\item Type in {\ttfamily dotnet build}
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item After the project is compiled, you should see green text saying\+: {\ttfamily Vytváření sestavení bylo úspěšně dokončeno.}
+\item The executable {\ttfamily Profiler.\+exe} will be located in {\ttfamily ivs-\/proj-\/2/src/profiler/bin/\+Debug/net6.\+0-\/windows/}
+\end{DoxyItemize}\hypertarget{md_profiler_README_autotoc_md10}{}\doxysubsubsection{Output\+:}\label{md_profiler_README_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Calculated standard deviation, written on {\ttfamily stdout}
+\item If the program finds out, there is only less than 2 numeric data to work with, {\ttfamily 0} will be written on {\ttfamily stdout} 
+\end{DoxyItemize}

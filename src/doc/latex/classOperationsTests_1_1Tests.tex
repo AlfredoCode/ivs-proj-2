@@ -1,0 +1,379 @@
+\hypertarget{classOperationsTests_1_1Tests}{}\doxysection{Operations\+Tests.\+Tests Class Reference}
+\label{classOperationsTests_1_1Tests}\index{OperationsTests.Tests@{OperationsTests.Tests}}
+
+
+Collaboration diagram for Operations\+Tests.\+Tests\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classOperationsTests_1_1Tests__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_aac7c9cdba1e3decfe6f2fa940ac83a87}{Add\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Add test to check if add works correctly checks\+: normal use of add checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a94df716d3724f9c659ee103b4ac4d583}{Sub\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Sub test to check if sub works correctly checks\+: normal use of sub checks\+: going bellow zero checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a8c8340d6086f7d13f331e42b01bae9fe}{Mul\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Mul test to check if mul works correctly checks\+: normal use of mul checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_aecc0eb962e7c677c3570768d0a033274}{Division\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Div test to check if div works correctly checks\+: normal use of div checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a0f54c700668d89836e03ff65d5854165}{Factorial\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Faktorial test to check if faktorial works correctly checks\+: normal use of faktorial checks\+: negative numbers checks\+: zero \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a14701609d5953e5177c9676ba3a8820c}{Power\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Power test to check if power works correctly checks\+: normal use of power checks\+: zero checks\+: negative numbers (odd) checks\+: negative numbers (even) checks\+: negative power checks\+: number betwean 0 and one \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a1d7bdc8acd4aa5b3e175d2f7caa58dd3}{Sqrt\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Sqrt test to check if square root works correctly checks\+: normal use of square root checks\+: number betwean 0 and one checks\+: negative rooted number checks\+: negative numbers rooted by checks\+: zero \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOperationsTests_1_1Tests_a9353b104dc29163935dc41380681598a}{Mod\+\_\+test}} ()
+\begin{DoxyCompactList}\small\item\em Mod test to check if mod works correctly checks\+: normal use of Mod checks\+: zero checks\+: number betwean 0 and one checks\+: negative numbers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}} = 1e-\/6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00017}{17}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_aac7c9cdba1e3decfe6f2fa940ac83a87}\label{classOperationsTests_1_1Tests_aac7c9cdba1e3decfe6f2fa940ac83a87}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Add\_Test@{Add\_Test}}
+\index{Add\_Test@{Add\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Add\_Test()}{Add\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Add\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add test to check if add works correctly checks\+: normal use of add checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00029}{29}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             Assert.AreEqual(11, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(2, 9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of add}}
+\DoxyCodeLine{00032             Assert.AreEqual(-\/7, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(2, -\/9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers}}
+\DoxyCodeLine{00033             Assert.AreEqual(2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(2, 0), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//zero}}
+\DoxyCodeLine{00034             Assert.AreEqual(0.8, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a8ad2e15390eaac8c9d51f54c8974f1e8}{Add}}(0.1, 0.7), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00035         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_aac7c9cdba1e3decfe6f2fa940ac83a87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_aecc0eb962e7c677c3570768d0a033274}\label{classOperationsTests_1_1Tests_aecc0eb962e7c677c3570768d0a033274}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Division\_Test@{Division\_Test}}
+\index{Division\_Test@{Division\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Division\_Test()}{Division\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Division\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Div test to check if div works correctly checks\+: normal use of div checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00076}{76}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077         \{}
+\DoxyCodeLine{00078             Assert.AreEqual(3, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(3, 9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of div}}
+\DoxyCodeLine{00079             Assert.AreEqual(-\/2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(-\/5, 10), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers}}
+\DoxyCodeLine{00080             \textcolor{keywordflow}{try}\textcolor{comment}{//zero}}
+\DoxyCodeLine{00081             \{}
+\DoxyCodeLine{00082                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(0, 9);}
+\DoxyCodeLine{00083             \}}
+\DoxyCodeLine{00084             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1DivZeroException}{DivZeroException}})}
+\DoxyCodeLine{00085             \{}
+\DoxyCodeLine{00086             \}}
+\DoxyCodeLine{00087             Assert.AreEqual(1, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a68b338939e3f132442f6a474b52cdc44}{Div}}(0.5, 0.5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00088         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_aecc0eb962e7c677c3570768d0a033274_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a0f54c700668d89836e03ff65d5854165}\label{classOperationsTests_1_1Tests_a0f54c700668d89836e03ff65d5854165}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Factorial\_Test@{Factorial\_Test}}
+\index{Factorial\_Test@{Factorial\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Factorial\_Test()}{Factorial\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Factorial\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Faktorial test to check if faktorial works correctly checks\+: normal use of faktorial checks\+: negative numbers checks\+: zero 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00096}{96}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             Assert.AreEqual(120, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a408f8e3cf76c1736486f7f86e11222a9}{Faktorial}}(5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of faktorial}}
+\DoxyCodeLine{00099             \textcolor{keywordflow}{try}\textcolor{comment}{//negative number}}
+\DoxyCodeLine{00100             \{}
+\DoxyCodeLine{00101                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a408f8e3cf76c1736486f7f86e11222a9}{Faktorial}}(-\/5);}
+\DoxyCodeLine{00102             \}}
+\DoxyCodeLine{00103             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1FactorialExeption}{FactorialExeption}})}
+\DoxyCodeLine{00104             \{}
+\DoxyCodeLine{00105             \}}
+\DoxyCodeLine{00106             Assert.AreEqual(1, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a408f8e3cf76c1736486f7f86e11222a9}{Faktorial}}(0), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//zero}}
+\DoxyCodeLine{00107         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a0f54c700668d89836e03ff65d5854165_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a9353b104dc29163935dc41380681598a}\label{classOperationsTests_1_1Tests_a9353b104dc29163935dc41380681598a}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Mod\_test@{Mod\_test}}
+\index{Mod\_test@{Mod\_test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Mod\_test()}{Mod\_test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Mod\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mod test to check if mod works correctly checks\+: normal use of Mod checks\+: zero checks\+: number betwean 0 and one checks\+: negative numbers 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00189}{189}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190         \{}
+\DoxyCodeLine{00191             Assert.AreEqual(2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(3, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of Mod}}
+\DoxyCodeLine{00192             \textcolor{keywordflow}{try}\textcolor{comment}{//zero}}
+\DoxyCodeLine{00193             \{}
+\DoxyCodeLine{00194                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(0, 5);}
+\DoxyCodeLine{00195             \}}
+\DoxyCodeLine{00196                 \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1ModExeption}{ModExeption}})}
+\DoxyCodeLine{00197             \{}
+\DoxyCodeLine{00198             \}}
+\DoxyCodeLine{00199             Assert.AreEqual(0.2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(0.3, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00200             Assert.AreEqual(0.1, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(0.3, 5.5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});}
+\DoxyCodeLine{00201             Assert.AreEqual(-\/2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(-\/3, 7), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers}}
+\DoxyCodeLine{00202             Assert.AreEqual(2, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a9033765df51b2e8632406df25054f572}{Mod}}(3, -\/7), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});}
+\DoxyCodeLine{00203         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a9353b104dc29163935dc41380681598a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a8c8340d6086f7d13f331e42b01bae9fe}\label{classOperationsTests_1_1Tests_a8c8340d6086f7d13f331e42b01bae9fe}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Mul\_Test@{Mul\_Test}}
+\index{Mul\_Test@{Mul\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Mul\_Test()}{Mul\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Mul\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mul test to check if mul works correctly checks\+: normal use of mul checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00061}{61}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             Assert.AreEqual(45, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(9, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of mul}}
+\DoxyCodeLine{00064             Assert.AreEqual(-\/50, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(5, -\/10), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers}}
+\DoxyCodeLine{00065             Assert.AreEqual(0, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(9, 0), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//zero}}
+\DoxyCodeLine{00066             Assert.AreEqual(0.07, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_aeb9c46e248aa444ec14d411d6fb576da}{Mul}}(0.7, 0.1), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00067         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a8c8340d6086f7d13f331e42b01bae9fe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a14701609d5953e5177c9676ba3a8820c}\label{classOperationsTests_1_1Tests_a14701609d5953e5177c9676ba3a8820c}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Power\_Test@{Power\_Test}}
+\index{Power\_Test@{Power\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Power\_Test()}{Power\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Power\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Power test to check if power works correctly checks\+: normal use of power checks\+: zero checks\+: negative numbers (odd) checks\+: negative numbers (even) checks\+: negative power checks\+: number betwean 0 and one 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00118}{118}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119         \{}
+\DoxyCodeLine{00120             Assert.AreEqual(125, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(3, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of power}}
+\DoxyCodeLine{00121             Assert.AreEqual(1, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(0, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//zero}}
+\DoxyCodeLine{00122             Assert.AreEqual(-\/125, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(3, -\/5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers (odd)}}
+\DoxyCodeLine{00123             Assert.AreEqual(25, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(2, -\/5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers (even)}}
+\DoxyCodeLine{00124             \textcolor{keywordflow}{try}\textcolor{comment}{//negative power}}
+\DoxyCodeLine{00125             \{}
+\DoxyCodeLine{00126                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(-\/3, 5);}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1PowNaturalException}{PowNaturalException}})}
+\DoxyCodeLine{00129             \{}
+\DoxyCodeLine{00130             \}}
+\DoxyCodeLine{00131             \textcolor{keywordflow}{try}\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00132             \{}
+\DoxyCodeLine{00133                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a698cd22098243cdc44b2129755f1a1dd}{Pow}}(0.5, 4);}
+\DoxyCodeLine{00134             \}}
+\DoxyCodeLine{00135             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1PowNaturalException}{PowNaturalException}})}
+\DoxyCodeLine{00136             \{}
+\DoxyCodeLine{00137             \}}
+\DoxyCodeLine{00138         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a14701609d5953e5177c9676ba3a8820c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a1d7bdc8acd4aa5b3e175d2f7caa58dd3}\label{classOperationsTests_1_1Tests_a1d7bdc8acd4aa5b3e175d2f7caa58dd3}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Sqrt\_Test@{Sqrt\_Test}}
+\index{Sqrt\_Test@{Sqrt\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Sqrt\_Test()}{Sqrt\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Sqrt\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sqrt test to check if square root works correctly checks\+: normal use of square root checks\+: number betwean 0 and one checks\+: negative rooted number checks\+: negative numbers rooted by checks\+: zero 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00148}{148}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149         \{}
+\DoxyCodeLine{00150             Assert.AreEqual(5, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(25, 2), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of square root}}
+\DoxyCodeLine{00151             \textcolor{keywordflow}{try}\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00152             \{}
+\DoxyCodeLine{00153                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(4, 0.5);}
+\DoxyCodeLine{00154             \}}
+\DoxyCodeLine{00155             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1SqrtNaturalExeption}{SqrtNaturalExeption}})}
+\DoxyCodeLine{00156             \{}
+\DoxyCodeLine{00157             \}}
+\DoxyCodeLine{00158             \textcolor{keywordflow}{try}\textcolor{comment}{//negative rooted number}}
+\DoxyCodeLine{00159             \{}
+\DoxyCodeLine{00160                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(-\/5, 5);}
+\DoxyCodeLine{00161             \}}
+\DoxyCodeLine{00162             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1SqrtNegExeption}{SqrtNegExeption}})}
+\DoxyCodeLine{00163             \{}
+\DoxyCodeLine{00164             \}}
+\DoxyCodeLine{00165             \textcolor{keywordflow}{try}\textcolor{comment}{//negative numbers rooted by}}
+\DoxyCodeLine{00166             \{}
+\DoxyCodeLine{00167                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(5, -\/3);}
+\DoxyCodeLine{00168             \}}
+\DoxyCodeLine{00169             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1SqrtNaturalExeption}{SqrtNaturalExeption}})}
+\DoxyCodeLine{00170             \{}
+\DoxyCodeLine{00171             \}}
+\DoxyCodeLine{00172             \textcolor{keywordflow}{try}\textcolor{comment}{//zero}}
+\DoxyCodeLine{00173             \{}
+\DoxyCodeLine{00174                 \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a5b5effec47a495e81d95e4f598a416c5}{Sqrt}}(5, 0);}
+\DoxyCodeLine{00175             \}}
+\DoxyCodeLine{00176             \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classexeptions_1_1SqrtbyZeroExeption}{SqrtbyZeroExeption}})}
+\DoxyCodeLine{00177             \{}
+\DoxyCodeLine{00178             \}}
+\DoxyCodeLine{00179         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a1d7bdc8acd4aa5b3e175d2f7caa58dd3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a94df716d3724f9c659ee103b4ac4d583}\label{classOperationsTests_1_1Tests_a94df716d3724f9c659ee103b4ac4d583}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Sub\_Test@{Sub\_Test}}
+\index{Sub\_Test@{Sub\_Test}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Sub\_Test()}{Sub\_Test()}}
+{\footnotesize\ttfamily void Operations\+Tests.\+Tests.\+Sub\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sub test to check if sub works correctly checks\+: normal use of sub checks\+: going bellow zero checks\+: negative numbers checks\+: zero checks\+: number betwean 0 and one 
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00045}{45}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             Assert.AreEqual(4, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(5, 9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//normal use of sub}}
+\DoxyCodeLine{00048             Assert.AreEqual(-\/5, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(10, 5), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//going bellow zero}}
+\DoxyCodeLine{00049             Assert.AreEqual(14, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(-\/5, 9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//negative numbers}}
+\DoxyCodeLine{00050             Assert.AreEqual(9, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(0, 9), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//zero}}
+\DoxyCodeLine{00051             Assert.AreEqual(0.6, \mbox{\hyperlink{classMathlib_1_1Operations}{Operations}}.\mbox{\hyperlink{classMathlib_1_1Operations_a97408967ea0522b64bcb20a5d7324c3a}{Sub}}(0.1, 0.7), \mbox{\hyperlink{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}{Accuracy}});\textcolor{comment}{//number betwean 0 and one}}
+\DoxyCodeLine{00052         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperationsTests_1_1Tests_a94df716d3724f9c659ee103b4ac4d583_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}\label{classOperationsTests_1_1Tests_a2698bcb0353922492eb9347773228bca}} 
+\index{OperationsTests.Tests@{OperationsTests.Tests}!Accuracy@{Accuracy}}
+\index{Accuracy@{Accuracy}!OperationsTests.Tests@{OperationsTests.Tests}}
+\doxysubsubsection{\texorpdfstring{Accuracy}{Accuracy}}
+{\footnotesize\ttfamily const double Operations\+Tests.\+Tests.\+Accuracy = 1e-\/6\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{tests_8cs_source_l00020}{20}} of file \mbox{\hyperlink{tests_8cs_source}{tests.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+testlib/\mbox{\hyperlink{tests_8cs}{tests.\+cs}}\end{DoxyCompactItemize}

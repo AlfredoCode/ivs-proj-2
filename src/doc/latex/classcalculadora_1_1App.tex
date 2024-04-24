@@ -1,0 +1,100 @@
+\hypertarget{classcalculadora_1_1App}{}\doxysection{calculadora.\+App Class Reference}
+\label{classcalculadora_1_1App}\index{calculadora.App@{calculadora.App}}
+
+
+Inheritance diagram for calculadora.\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classcalculadora_1_1App__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for calculadora.\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classcalculadora_1_1App__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcalculadora_1_1App_ab50eed320092ffc4a0427393b78f523e}{App}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override Window \mbox{\hyperlink{classcalculadora_1_1App_adc7d80d58144e03fc7c7bb9179513de1}{Create\+Window}} (IActivation\+State? activation\+State)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{App_8xaml_8cs_source_l00003}{3}} of file \mbox{\hyperlink{App_8xaml_8cs_source}{App.\+xaml.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcalculadora_1_1App_ab50eed320092ffc4a0427393b78f523e}\label{classcalculadora_1_1App_ab50eed320092ffc4a0427393b78f523e}} 
+\index{calculadora.App@{calculadora.App}!App@{App}}
+\index{App@{App}!calculadora.App@{calculadora.App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily calculadora.\+App.\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{App_8xaml_8cs_source_l00005}{5}} of file \mbox{\hyperlink{App_8xaml_8cs_source}{App.\+xaml.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006         \{}
+\DoxyCodeLine{00007             InitializeComponent();}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009             MainPage = \textcolor{keyword}{new} AppShell();}
+\DoxyCodeLine{00010         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcalculadora_1_1App_adc7d80d58144e03fc7c7bb9179513de1}\label{classcalculadora_1_1App_adc7d80d58144e03fc7c7bb9179513de1}} 
+\index{calculadora.App@{calculadora.App}!CreateWindow@{CreateWindow}}
+\index{CreateWindow@{CreateWindow}!calculadora.App@{calculadora.App}}
+\doxysubsubsection{\texorpdfstring{CreateWindow()}{CreateWindow()}}
+{\footnotesize\ttfamily override Window calculadora.\+App.\+Create\+Window (\begin{DoxyParamCaption}\item[{IActivation\+State?}]{activation\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{App_8xaml_8cs_source_l00012}{12}} of file \mbox{\hyperlink{App_8xaml_8cs_source}{App.\+xaml.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013         \{}
+\DoxyCodeLine{00014             var window = base.CreateWindow(activationState);}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016             \textcolor{keyword}{const} \textcolor{keywordtype}{int} newWidth = 349;}
+\DoxyCodeLine{00017             \textcolor{keyword}{const} \textcolor{keywordtype}{int} newHeight = 508;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019             window.Width = newWidth;}
+\DoxyCodeLine{00020             window.Height = newHeight;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022             window.MinimumHeight = 450;}
+\DoxyCodeLine{00023             window.MaximumHeight = 1080;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025             window.MinimumWidth = 300;}
+\DoxyCodeLine{00026             window.MaximumWidth = 1920;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028             \textcolor{keywordflow}{return} window;}
+\DoxyCodeLine{00029         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\mbox{\hyperlink{App_8xaml_8cs}{App.\+xaml.\+cs}}\end{DoxyCompactItemize}

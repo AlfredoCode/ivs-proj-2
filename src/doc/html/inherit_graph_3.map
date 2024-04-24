@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,92,184"/>
+<area shape="rect" id="node2" href="$classexeptions_1_1DivZeroException.html" title=" " alt="" coords="151,5,357,32"/>
+<area shape="rect" id="node3" href="$classexeptions_1_1FactorialExeption.html" title=" " alt="" coords="154,56,354,83"/>
+<area shape="rect" id="node4" href="$classexeptions_1_1ModExeption.html" title=" " alt="" coords="167,107,341,133"/>
+<area shape="rect" id="node5" href="$classexeptions_1_1PowNaturalException.html" title=" " alt="" coords="140,157,368,184"/>
+<area shape="rect" id="node6" href="$classexeptions_1_1SqrtNaturalExeption.html" title=" " alt="" coords="145,208,363,235"/>
+<area shape="rect" id="node7" href="$classexeptions_1_1SqrtNegExeption.html" title=" " alt="" coords="155,259,353,285"/>
+<area shape="rect" id="node8" href="$classexeptions_1_1SqrtbyZeroExeption.html" title=" " alt="" coords="145,309,363,336"/>
+</map>

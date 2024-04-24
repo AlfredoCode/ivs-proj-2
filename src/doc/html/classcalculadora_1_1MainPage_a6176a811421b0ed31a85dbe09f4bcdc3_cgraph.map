@@ -1,0 +1,4 @@
+<map id="calculadora.MainPage.OnPi" name="calculadora.MainPage.OnPi">
+<area shape="rect" id="node1" title="Appends &quot;π&quot; to the result text and removes leading zeros." alt="" coords="5,5,204,32"/>
+<area shape="rect" id="node2" href="$classMathlib_1_1Operations.html#a3990cf01222c53df92312538d76a9a72" title=" " alt="" coords="252,5,444,32"/>
+</map>
