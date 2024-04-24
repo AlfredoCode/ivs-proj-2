@@ -1,4 +1,3 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+xhofma11 100 (Debugging, Profiler, Installer / Uninstaller, Makefile, Doxygen documentation)
+xmoskv01 100 (User Interface, User Manual, UI binding with Mathlib)
+xskypa03 100 (Mathlib, Tests for Mathlib, UI binding with Mathlib, Makefile)
