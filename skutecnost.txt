@@ -1,1 +1,12 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Jeden z největších rozdílů mezi plánem a skutečností byl fakt, že nám odpadl spolužák z týmu. 
+Tedy místo 4 lidí jsme na projektu dělali 3.
+
+Stanovené termíny byly ze začátku víceméně dodržovány, nicméně v březnu se toto začalo čím dál více rozcházet z plánem,
+jelikož všechny členy týmu zastihly půlsemestrální zkoušky a projekty z ostatních předmětů.
+
+Dalšími důvody, proč se stanovené termíny nepovedlo dodržet, byly neočekávané problémy s .NET MAUI frameworkem a zvláštním chováním Visual Studia. 
+
+Komunikace probíhala mezi členy týmu dobře a nebylo potřeba řešit neaktivitu některého z členů.
+Komunikace probíhala výhradně přes kanál Discord, což všem členům vyhovovalo.
+
+Pro plánování práce byla využita aplikace Asana, museli jsme řešit přechod z "Free trial" verze na "Free" verzi, nicméně šlo to jednoduše změnit.
